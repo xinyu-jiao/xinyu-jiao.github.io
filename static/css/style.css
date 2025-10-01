@@ -468,6 +468,7 @@ body.landing-dismissed .main-content {
   
   .main-content {
     padding: 24px 16px;
+    align-items: flex-start;
   }
   
   .project-card img {
