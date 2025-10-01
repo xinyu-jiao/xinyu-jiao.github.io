@@ -21,7 +21,17 @@ class PageController {
    */
   init() {
     this.setupNavigation();
+    this.applyInitialState();
     console.log('Page controller initialized');
+  }
+
+  /**
+   * Apply initial UI state based on URL hash
+   */
+  applyInitialState() {
+    if (window.location.hash === '#projects') {
+      this.showProjects({ skipUrlUpdate: true });
+    }
   }
 
   /**
@@ -47,15 +57,27 @@ class PageController {
   /**
    * Hide landing section and show projects
    */
-  showProjects() {
+  showProjects(options = {}) {
+    const { skipUrlUpdate = false } = options;
     document.body.classList.add('landing-dismissed');
+
+    if (!skipUrlUpdate && window.history?.replaceState) {
+      const { pathname, search } = window.location;
+      window.history.replaceState(null, '', `${pathname}${search}#projects`);
+    }
   }
 
   /**
    * Show landing section and hide projects
    */
-  showLanding() {
+  showLanding(options = {}) {
+    const { skipUrlUpdate = false } = options;
     document.body.classList.remove('landing-dismissed');
+
+    if (!skipUrlUpdate && window.history?.replaceState) {
+      const { pathname, search } = window.location;
+      window.history.replaceState(null, '', `${pathname}${search}`);
+    }
   }
 }
 
