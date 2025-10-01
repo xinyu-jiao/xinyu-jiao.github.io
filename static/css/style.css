@@ -1,0 +1,476 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+.content {
+    width: 100%;
+    min-height: 100vh;
+}
+
+.pages {
+    width: 100%;
+    min-height: 100vh;
+}
+
+.page {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../assets/figures/xinyu-jiao-cover.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+}
+
+.backdrop::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: 
+        linear-gradient(45deg, rgba(0, 0, 0, 0.75) 25%, transparent 25%),
+        linear-gradient(-45deg, rgba(0, 0, 0, 0.75) 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, rgba(0, 0, 0, 0.75) 75%),
+        linear-gradient(-45deg, transparent 75%, rgba(0, 0, 0, 0.75) 75%);
+    background-size: 4px 4px;
+    background-position: 0 0, 0 2px, 2px -2px, -2px 0px;
+    z-index: 1;
+}
+
+.backdrop::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.15);
+    z-index: 2;
+}
+
+.backdrop-contents {
+    width: 100%;
+    height: 100%;
+}
+
+.page-layout {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 1400px;
+    padding: 0 3rem;
+}
+
+.page-content {
+    width: 100%;
+}
+
+bodycopy {
+    display: block;
+    width: 100%;
+}
+
+column-set {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    gap: 5rem;
+    align-items: start;
+}
+
+column-unit {
+    display: block;
+}
+
+column-unit[slot="0"] {
+    padding-right: 0;
+}
+
+column-unit[slot="1"] {
+    padding-left: 0;
+}
+
+.cover {
+    display: block;
+    color: #ffffff;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+column-unit[slot="0"] .cover {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+column-unit[slot="0"] .cover i {
+    font-style: italic;
+    font-weight: 300;
+}
+
+column-unit[slot="0"] .cover small {
+    font-size: 0.8em;
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+.social-icons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.icon-link {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    border-bottom: none;
+    opacity: 0.85;
+    transition: all 0.3s ease;
+}
+
+.icon-link:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+.icon-link:active {
+    opacity: 0.7;
+    transform: translateY(0);
+}
+
+.icon-link img {
+    width: 100%;
+    height: auto;
+    align-items: center;
+    display: block;
+    filter: brightness(0) invert(1);
+}
+
+column-unit[slot="1"] .cover {
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: 0.01em;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    border-bottom-color: #ffffff;
+    opacity: 0.8;
+}
+
+a:active {
+    opacity: 0.6;
+}
+
+@media (max-width: 1200px) {
+    .page-layout {
+        max-width: 1000px;
+        padding: 0 2.5rem;
+    }
+    
+    column-set {
+        gap: 4rem;
+    }
+    
+    column-unit[slot="0"] .cover {
+        font-size: 1.8rem;
+    }
+    
+    column-unit[slot="1"] .cover {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    column-set {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+    
+    column-unit[slot="0"],
+    column-unit[slot="1"] {
+        padding: 0;
+    }
+    
+    column-unit[slot="0"] .cover {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    column-unit[slot="1"] .cover {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-layout {
+        padding: 0 1.5rem;
+    }
+    
+    .backdrop {
+        background-position: center top;
+    }
+    
+    column-set {
+        gap: 2rem;
+    }
+    
+    column-unit[slot="0"] .cover {
+        font-size: 1.5rem;
+    }
+    
+    column-unit[slot="1"] .cover {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+    
+    .social-icons {
+        gap: 0.6rem;
+    }
+    
+    .icon-link {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-layout {
+        padding: 0 1rem;
+    }
+    
+    column-unit[slot="0"] .cover {
+        font-size: 1.3rem;
+    }
+    
+    column-unit[slot="1"] .cover {
+        font-size: 0.95rem;
+    }
+    
+    .social-icons {
+        gap: 0.5rem;
+        margin-top: 0.8rem;
+    }
+    
+    .icon-link {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+.f-f {
+    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+}
+
+customhtml,
+aside#color_picker {
+    display: none;
+}
+
+div[style*="z-index: -99"] {
+    display: none;
+}
+
+.backdrop {
+    will-change: transform;
+    transform: translateZ(0);
+}
+
+.page-layout {
+    will-change: opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *:not(.landing-section):not(.main-content):not(.back-arrow) {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+.landing-section {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 0.6s ease;
+}
+
+body.landing-dismissed .landing-section {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.landing-spacer {
+  display: none;
+}
+
+.back-arrow {
+  position: fixed;
+  top: 24px;
+  left: 24px;
+  width: 48px;
+  height: 48px;
+  background: transparent;
+  color: #111;
+  border: none;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+body.landing-dismissed .back-arrow {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+
+.back-arrow:hover {
+  background: rgba(0, 0, 0, 0.08);
+  transform: scale(1.15);
+}
+
+.main-content {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  opacity: 0;
+  overflow-y: auto;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+  font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  transition: opacity 0.6s ease;
+}
+
+body.landing-dismissed .main-content {
+  opacity: 1;
+}
+
+.projects {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0;
+  margin: 0;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.project-card {
+  background: #fff;
+  border: none;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
+  padding: 20px;
+  color: inherit;
+}
+
+.project-card:hover {
+  transform: translateY(-2px);
+}
+
+.project-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.project-content {
+  padding: 20px;
+  background: #fff;
+}
+
+.project-content h3 {
+  margin: 0 0 8px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #111;
+  line-height: 1.3;
+}
+
+.project-content p {
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  color: #666;
+  line-height: 1.4;
+}
+
+.project-date {
+  font-size: 12px;
+  color: #666;
+  font-weight: 500;
+}
+
+.project-card:focus-visible {
+  outline: 2px solid #111;
+  outline-offset: 2px;
+}
+
+
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .main-content {
+    padding: 24px 16px;
+  }
+  
+  .project-card img {
+    height: 180px;
+  }
+} 
