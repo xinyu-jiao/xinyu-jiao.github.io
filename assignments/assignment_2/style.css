@@ -1,0 +1,44 @@
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #fdfaf6;
+    color: #2c2c2c;
+}
+
+div {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #d9534f;
+    margin-bottom: 0.2em;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 2em;
+    text-align: center;
+    font-style: italic;
+}
+
+p {
+    margin-bottom: 1.2em;
+    text-align: justify;
+}
+
+.publication-info {
+    font-style: italic;
+    font-size: 0.9em;
+    color: #777;
+    text-align: right;
+} 

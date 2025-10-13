@@ -378,9 +378,9 @@ body.landing-dismissed .back-arrow {
   overflow-y: auto;
   background: #fff;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  padding: 40px 24px;
+  padding: 80px 24px 40px;
   font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   transition: opacity 0.6s ease;
 }
@@ -459,6 +459,77 @@ body.landing-dismissed .main-content {
   outline-offset: 2px;
 }
 
+.assignments {
+  width: 100%;
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.assignments-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #111;
+}
+
+.assignment-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0;
+  margin: 0;
+}
+
+.assignment-item {
+  width: 100%;
+}
+
+.assignment-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px 24px;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+  color: #111;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  font-family: inherit;
+}
+
+.assignment-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(17, 17, 17, 0.08);
+  border-color: rgba(17, 17, 17, 0.3);
+}
+
+.assignment-link:focus-visible {
+  outline: 2px solid rgba(17, 17, 17, 0.6);
+  outline-offset: 2px;
+}
+
+.assignment-name {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.assignment-icon {
+  font-size: 20px;
+  transition: transform 0.2s ease;
+}
+
+.assignment-link:hover .assignment-icon {
+  transform: translateX(4px);
+}
+
+.assignment-link:focus-visible .assignment-icon {
+  transform: translateX(4px);
+}
+
 
 @media (max-width: 768px) {
   .projects-grid {
@@ -467,11 +538,30 @@ body.landing-dismissed .main-content {
   }
   
   .main-content {
-    padding: 24px 16px;
+    padding: 80px 16px 32px;
     align-items: flex-start;
+    justify-content: center;
   }
   
   .project-card img {
     height: 180px;
+  }
+
+  .assignments {
+    margin-top: 32px;
+    gap: 12px;
+  }
+
+  .assignments-title {
+    font-size: 24px;
+  }
+
+  .assignment-link {
+    padding: 16px 20px;
+  }
+
+  .assignment-name,
+  .assignment-icon {
+    font-size: 18px;
   }
 } 

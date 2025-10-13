@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html,
+  body {
+    height: 100%;
+  }
+  
+  body {
+    min-height: 100vh;
+    background-color: #fdfaf6;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 16px;
+    line-height: 1.68em;
+    color: #141414;
+  }
+  
+  .container {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+  }
+  
+  header {
+    background-color: #d94a47;
+    color: #F2F2F2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px 20px;
+  }
+  
+  main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    background-color: #F2F2F2;
+    padding: 40px 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  
+  footer {
+    background-color: #8B4545;
+    color: #F2F2F2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  h1 {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 3em;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin: 0;
+    text-transform: uppercase;
+  }
+  
+  h2 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.25em;
+    font-weight: 400;
+    font-style: italic;
+    margin-top: 0.5em;
+    opacity: 0.9;
+  }
+  
+  main p {
+    margin: 0;
+    text-align: justify;
+    hyphens: auto;
+    background: white;
+    padding: 25px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+  
+  figure {
+    grid-column: 1 / -1;
+    position: relative;
+    height: 30vh;
+    margin: 0 0 2em 0;
+    overflow: hidden;
+  }
+  
+  figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+  }
+  
+  figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(217, 74, 71, 0.85);
+    color: #F2F2F2;
+    padding: 12px 20px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 0.875em;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  
+  .publication-info {
+    font-size: 0.875em;
+    font-style: italic;
+    margin: 0;
+    text-align: center;
+    background: transparent;
+    padding: 0;
+    box-shadow: none;
+  }
+  
+  @media (max-width: 768px) {
+    main {
+      grid-template-columns: 1fr;
+      padding: 30px 20px;
+    }
+    
+    h1 {
+      font-size: 2em;
+    }
+    
+    h2 {
+      font-size: 1em;
+    }
+    
+    figure {
+      height: 30vh;
+    }
+  } 
