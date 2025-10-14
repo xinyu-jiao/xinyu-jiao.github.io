@@ -1,9 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
 :root {
   --bg: #fff;
   --fg: #111;
   --muted: #666;
   --brand: #000;
   --border: #eee;
+  --project-heading-spacing: 0.02em;
+  --project-body-spacing: 0.004em;
   
   --radius-pill: 999px;
   --radius-card: 8px;
@@ -17,8 +21,9 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--fg);
-  font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-family: 'Outfit', 'Manrope', 'Segoe UI', Roboto, sans-serif;
   line-height: 1.6;
+  letter-spacing: var(--project-body-spacing);
 }
 
 .project-page {
@@ -61,15 +66,19 @@ body {
 
 .project-title {
   font-size: 3rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--fg);
   margin-bottom: 1rem;
+  font-family: 'Space Grotesk', 'Outfit', 'Manrope', sans-serif;
+  letter-spacing: var(--project-heading-spacing);
 }
 
 .project-subtitle {
   font-size: 1.2rem;
   color: var(--muted);
   margin-bottom: 2rem;
+  font-family: 'Outfit', 'Manrope', 'Segoe UI', sans-serif;
+  letter-spacing: 0.01em;
 }
 
 .project-content {
@@ -318,11 +327,14 @@ body {
   }
 }
 
+
 .project-description {
   font-size: 1.1rem;
   line-height: 1.6;
   color: var(--fg);
   margin-bottom: 2rem;
+  font-family: 'Outfit', 'Manrope', 'Segoe UI', sans-serif;
+  letter-spacing: var(--project-body-spacing);
 }
 
 .project-description p {
