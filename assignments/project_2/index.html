@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Atlas of Places</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app" data-active-place="madison">
+        <header class="app__header">
+            <h1>My Atlas of Places</h1>
+            <p class="app__subtitle">Tracing light across the states · a personal travel map</p>
+        </header>
+
+        <main class="app__main">
+            <section class="story">
+                <p>
+                    Each stop is a memory of light and movement—from quiet lakes to restless skylines. Click a place to shift the mood, hover to hear its whisper, and slide across the timeline to trace the journey toward a future horizon.
+                </p>
+            </section>
+
+            <section class="locations" aria-label="Locations">
+                
+                <article class="location-card" data-place="nyc" tabindex="0">
+                    <h2>New York, NY</h2>
+                    <p class="location-card__year">June 2025 · Sleepless beginnings</p>
+                    <p class="location-card__note">“Billboards breathing in fast beats.”</p>
+                </article>
+                <article class="location-card" data-place="madison" tabindex="0">
+                    <h2>Madison, WI</h2>
+                    <p class="location-card__year">August 2025 · Lakeside romance</p>
+                    <p class="location-card__note">“Capitol shimmering on the isthmus.”</p>
+                </article>
+                <article class="location-card" data-place="chicago" tabindex="0">
+                    <h2>Chicago, IL</h2>
+                    <p class="location-card__year">August 2025 · Vertical rhythms</p>
+                    <p class="location-card__note">“Concrete, steel, and neon hush.”</p>
+                </article>
+                <article class="location-card" data-place="orlando" tabindex="0">
+                    <h2>Orlando, FL</h2>
+                    <p class="location-card__year">October 2025 · Tropic sparks</p>
+                    <p class="location-card__note">“Sun-glow afternoons and stormy nights.”</p>
+                </article>
+                <article class="location-card" data-place="hawaii" tabindex="0">
+                    <h2>Honolulu, HI</h2>
+                    <p class="location-card__year">January 2026 · On the horizon</p>
+                    <p class="location-card__note">“Salted breeze, a future wave.”</p>
+                </article>
+            </section>
+
+            <aside class="details" aria-live="polite">
+                <div class="details__image">
+                    <div class="photo-stack photo-stack--empty">
+                        <span class="details__placeholder">Image coming soon</span>
+                    </div>
+                </div>
+                <div class="details__text">
+                    <h3 class="details__title"></h3>
+                    <p class="details__description"></p>
+                </div>
+            </aside>
+        </main>
+
+        <footer class="app__footer">
+            <label for="timeline" class="timeline__label">Trace the journey</label>
+            <input type="range" id="timeline" class="timeline__slider" min="0" max="4" value="0" step="1" aria-label="Timeline slider">
+            <p class="app__quote">“I wanted this catalog to move like memory — each place fading into the next, colors shifting with mood, light changing with time.”</p>
+        </footer>
+    </div>
+
+    <div class="animation-layer" aria-hidden="true">
+        <div class="animation-layer__nyc"></div>
+        <div class="animation-layer__madison"></div>
+        <div class="animation-layer__chicago"></div>
+        <div class="animation-layer__orlando"></div>
+        <div class="animation-layer__hawaii"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
