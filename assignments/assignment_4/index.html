@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Micro Brand Kit</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page">
+        <header>
+            <h1>Micro Brand Kit</h1>
+            <p>A compact design language that mirrors the typography, color story, and interaction patterns of Xinyu Jiao’s portfolio. Use these tokens to prototype assignment deliverables without drifting from the main site’s visual rhythm.</p>
+        </header>
+
+        <section aria-labelledby="colors-title">
+            <div class="section-title">
+                <h2 id="colors-title">Color System</h2>
+                <span>Core palette</span>
+            </div>
+            <div class="grid grid--three">
+                <article class="card">
+                    <div class="color-swatch" style="background: var(--color-primary);"></div>
+                    <div class="color-meta">
+                        <strong>Deep Ink</strong>
+                        <span>#111827</span>
+                        <span>Headlines, anchors, navigation</span>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="color-swatch" style="background: var(--color-secondary);"></div>
+                    <div class="color-meta">
+                        <strong>Cobalt Signal</strong>
+                        <span>#4C6EF5</span>
+                        <span>Primary actions, focus states</span>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="color-swatch" style="background: var(--color-accent);"></div>
+                    <div class="color-meta">
+                        <strong>Warm Pulse</strong>
+                        <span>#F7A46C</span>
+                        <span>Status highlights, badges</span>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="color-swatch" style="background: var(--color-neutral-dark);"></div>
+                    <div class="color-meta">
+                        <strong>Slate Type</strong>
+                        <span>#374151</span>
+                        <span>Body copy, secondary labels</span>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="color-swatch" style="background: var(--color-neutral-light);"></div>
+                    <div class="color-meta">
+                        <strong>Mist Surface</strong>
+                        <span>#F3F4F6</span>
+                        <span>Page backgrounds, cards</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section aria-labelledby="type-title">
+            <div class="section-title">
+                <h2 id="type-title">Type Ramp</h2>
+                <span>Portfolio rhythm</span>
+            </div>
+            <div class="card type-ramp">
+                <div class="type-row" data-role="headline">
+                    <h3>Display · 64 / 72</h3>
+                    <div class="sample">Xinyu Jiao · Computational Design Practices</div>
+                </div>
+                <div class="type-row" data-role="title">
+                    <h3>Headline · 36 / 44</h3>
+                    <div class="sample">Project spotlight: Empathy through interaction.</div>
+                </div>
+                <div class="type-row" data-role="subtitle">
+                    <h3>Section Lead · 20 / 28</h3>
+                    <div class="sample">Spatial coding assignments and research insights.</div>
+                </div>
+                <div class="type-row" data-role="body">
+                    <h3>Body · 16 / 26</h3>
+                    <div class="sample">Case studies, captions, and interaction notes remain here for comfortable reading across devices.</div>
+                </div>
+            </div>
+        </section>
+
+        <section aria-labelledby="spacing-title">
+            <div class="section-title">
+                <h2 id="spacing-title">Spacing Rhythm</h2>
+                <span>Three core steps</span>
+            </div>
+            <div class="spacing-scale">
+                <article class="space-chip" data-size="xs">
+                    <div class="label">Space XS · 8px</div>
+                    <div class="space-visual" style="background: var(--color-secondary);"></div>
+                    <span>Icon padding, tag interiors, dense metadata rows.</span>
+                </article>
+                <article class="space-chip" data-size="sm">
+                    <div class="label">Space SM · 16px</div>
+                    <div class="space-visual" style="background: var(--color-accent);"></div>
+                    <span>Default gap for cards, list items, and footer stacks.</span>
+                </article>
+                <article class="space-chip" data-size="lg">
+                    <div class="label">Space LG · 32px</div>
+                    <div class="space-visual"></div>
+                    <span>Section dividers, hero breathing room, desktop gutters.</span>
+                </article>
+            </div>
+        </section>
+
+        <section aria-labelledby="component-title">
+            <div class="section-title">
+                <h2 id="component-title">Primary Component</h2>
+                <span>Button pattern</span>
+            </div>
+            <article class="card component-preview">
+                <p>The button family echoes portfolio CTAs: padded pill silhouettes, crisp gradients, and a quiet ghost style that still feels intentional when placed on soft surfaces.</p>
+                <div class="button-row">
+                    <button class="button button--primary" type="button">View Portfolio</button>
+                    <button class="button button--ghost" type="button">Download Resume</button>
+                </div>
+            </article>
+        </section>
+
+        <footer>
+            Assignment 4 · Micro brand kit aligned with portfolio visuals.
+        </footer>
+    </div>
+</body>
+</html>
