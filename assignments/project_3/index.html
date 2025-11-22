@@ -1,1 +1,105 @@
-helllo
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Color Catalog — Xinyu Jiao</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A color-driven catalog of works by Xinyu Jiao.">
+  <meta name="keywords" content="image gallery, photography, visual collection, interactive design">
+  <meta name="author" content="Xinyu Jiao">
+  <meta property="og:title" content="Color Catalog — Xinyu Jiao">
+  <meta property="og:description" content="A color-driven catalog of works organized by color spectrum.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Mouse halo -->
+  <div class="mouse-halo" id="mouse-halo"></div>
+
+  <div class="page">
+
+    <header class="site-header">
+      <div class="site-title-block">
+        <h1 class="site-title">Color Catalog</h1>
+        <p class="site-subtitle">
+          A living archive of works by Xinyu Jiao, organized by color.
+        </p>
+      </div>
+      <div class="site-meta">
+        <button class="ghost-link" id="about-toggle">About</button>
+      </div>
+    </header>
+
+    <section class="controls" aria-label="Filters and views">
+      <div class="filters">
+        <span class="controls-label">Tags</span>
+        <div class="filter-scroll" id="filter-container">
+          <!-- Filter buttons will be generated dynamically -->
+        </div>
+      </div>
+
+      <div class="views">
+        <span class="controls-label">View</span>
+        <button id="view-toggle" class="view-toggle-btn" type="button">
+          Grid · Original
+        </button>
+      </div>
+    </section>
+
+    <main>
+      <section id="collection" class="collection" aria-label="Works">
+        <!-- JS will insert .item-card here -->
+      </section>
+    </main>
+
+
+  </div>
+
+  <!-- About overlay -->
+  <section class="about-overlay" id="about-overlay" aria-hidden="true">
+    <div class="about-panel">
+      <button class="about-close" id="about-close" aria-label="Close about">×</button>
+      <h2>About this catalog</h2>
+      <p>
+        This site is a color-driven catalog of my works. Instead of grouping
+        projects by course or semester, each piece lives inside a color world: red,
+        blue, green, and everything in between.
+      </p>
+      <p>
+        Color becomes a way to trace mood, medium, and questions across different
+        projects — from haptic navigation devices for blind users, to interactive
+        projections, to speculative interfaces.
+      </p>
+      <p class="about-credit">
+        Designed, coded, and collected by <strong>Xinyu Jiao</strong>.
+      </p>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+  <script>
+    // About overlay logic
+    const aboutToggle = document.getElementById('about-toggle');
+    const aboutOverlay = document.getElementById('about-overlay');
+    const aboutClose = document.getElementById('about-close');
+
+    if (aboutToggle && aboutOverlay && aboutClose) {
+      aboutToggle.addEventListener('click', () => {
+        aboutOverlay.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('no-scroll');
+      });
+      aboutClose.addEventListener('click', () => {
+        aboutOverlay.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('no-scroll');
+      });
+      aboutOverlay.addEventListener('click', (e) => {
+        if (e.target === aboutOverlay) {
+          aboutOverlay.setAttribute('aria-hidden', 'true');
+          document.body.classList.remove('no-scroll');
+        }
+      });
+    }
+  </script>
+</body>
+</html>
