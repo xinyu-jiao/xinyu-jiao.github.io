@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Meridian Ribbon - A visual-to-touch wearable + app system for blind and low-vision users, inspired by Traditional Chinese Medicine">
+    <title>Meridian Ribbon | Capstone Project 2025</title>
+    <link rel="stylesheet" href="../assets/projects/port_7/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">Meridian Ribbon</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#why-tcm" class="nav-link">Why TCM</a></li>
+                <li><a href="#methods" class="nav-link">Methods</a></li>
+                <li><a href="#precedents" class="nav-link">Precedents</a></li>
+                <li><a href="#prototype" class="nav-link">Prototype</a></li>
+                <li><a href="#project-storyboard" class="nav-link">Storyboard</a></li>
+                <li><a href="#audience" class="nav-link">Audience</a></li>
+                <li><a href="#research" class="nav-link">Research</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content hero-content-full">
+                <h1 class="hero-title">Meridian Ribbon</h1>
+                <div class="hero-info">
+                    <p class="hero-school">Columbia GSAPP</p>
+                    <p class="hero-name">Xinyu Jiao</p>
+                    <p class="hero-course">Computational Design Practices: Colloquium 2 Fall 2025</p>
+                </div>
+                <p class="hero-subtitle">A visual-to-touch wearable + app system for blind and low-vision users, inspired by Traditional Chinese Medicine.</p>
+                <div class="hero-hypothesis">
+                    <h2 class="hypothesis-title">Research Question</h2>
+                    <p class="hypothesis-text">How can visual information be translated into meridian-based vibration patterns (with minimal voice cues) on the wrist to help blind and low-vision people sense space and atmosphere through their body?</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Three Modes Cards -->
+        <div class="modes-section">
+            <div class="modes-container">
+                <div class="mode-card">
+                    <h3>FLOW</h3>
+                    <p>Moving & Navigation</p>
+                    <p class="mode-desc">Helps you move safely. The vibration feels like a smooth stream on your wrist when the path is clear. If there is an obstacle, the vibration "stutters" to warn you.</p>
+                </div>
+                <div class="mode-card">
+                    <h3>SENSE</h3>
+                    <p>Feeling the Atmosphere</p>
+                    <p class="mode-desc">Helps you feel the "vibe" of a room. A quiet, empty space feels like slow breathing patterns. A busy, crowded place feels like rough, sandy textures.</p>
+                </div>
+                <div class="mode-card">
+                    <h3>FOCUS</h3>
+                    <p>Point & Identify</p>
+                    <p class="mode-desc">Helps you find specific objects. Just point your hand like a laser. The wrist gives a sharp "click" vibration when it locks onto an object (like a sign or door), and then reads out the name.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About / Project Description -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">Project Description</h2>
+            <div class="content-box">
+                <p>Meridian Ribbon is a wearable + app system for blind and low-vision users that turns visual information into sound and vibration on the wrist. The phone app uses the camera to read the environment and interpret simple states—like street vs. corridor, quiet vs. crowded, calm vs. tense. These states are translated into short sound cues and meridian-inspired vibration patterns, arranged along the wrist as a continuous tactile "ribbon." Rather than looking at a screen, users can orient themselves, sense atmosphere, and reflect on their day through hearing and touch. The project treats Traditional Chinese Medicine meridians not as medicine, but as a body-centered interface language for organizing haptic feedback.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why TCM? The Logic of Layout -->
+    <section id="why-tcm" class="section">
+        <div class="container">
+            <h2 class="section-title">Why TCM? The Logic of Layout</h2>
+            
+            <!-- TCM Content Layout: Image + Reasons -->
+            <div class="tcm-content-layout">
+                <!-- TCM Meridian Diagram -->
+                <div class="tcm-diagram-wrapper">
+                    <img src="../assets/projects//port_7/images/1.jpg" alt="Human body meridians diagram" class="tcm-diagram-image">
+                </div>
+                
+                <!-- Three Scientific Reasons Grid -->
+                <div class="tcm-reasons-grid">
+                <div class="tcm-reason-card">
+                    <h3>Anatomical Sensitivity</h3>
+                    <p>Acupoints like Neiguan (PC6) sit on high nerve density areas. Mapping vibrations here ensures clearer feedback and higher tactile acuity.</p>
+                </div>
+                
+                <div class="tcm-reason-card">
+                    <h3>Cognitive Linear Flow</h3>
+                    <p>The brain tracks continuous lines easier than random dots. Meridians act as a natural "highway" for information, reducing cognitive load.</p>
+                </div>
+                
+                <div class="tcm-reason-card">
+                    <h3>Somatic Calm</h3>
+                    <p>Stimulating the Pericardium Meridian aligns with calming the heart. It turns the device into an emotional regulator, not just a navigation tool.</p>
+                </div>
+                </div>
+            </div>
+
+            <!-- Interview Insight Box -->
+            <div class="interview-insight-box">
+                <h3>Insights from Interviews</h3>
+                
+                <div class="insight-item">
+                    <blockquote class="user-quote">"I can't form a map of the room — everything feels scattered."</blockquote>
+                    <p class="insight-explanation">Blind users shared that their biggest challenge is not the lack of information, but the lack of structure. They need spatial feedback that is <strong>continuous, directional, and quiet</strong>, not fragmented descriptions.</p>
+                </div>
+                
+                <div class="insight-item">
+                    <blockquote class="user-quote">"Meridians are the body's natural pathways for sensing direction."</blockquote>
+                    <p class="insight-explanation">A TCM practitioner explained that the wrist and forearm meridians behave like an <strong>embedded spatial coordinate system</strong>. Sequential tactile stimulation along these lines creates a clear sense of flow and direction, even without vision.</p>
+                </div>
+                
+                <div class="core-insight">
+                    <h4>Core Insight</h4>
+                    <p>Blind users need <strong>structured, directional, silent spatial cues</strong> — and meridian pathways offer a natural framework for delivering them.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Computational Methods -->
+    <section id="methods" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Computational Methods</h2>
+            <div class="computational-methods-diagram">
+                <!-- Step 01: SEEING -->
+                <div class="method-card">
+                    <div class="method-card-icon">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="20" y="25" width="60" height="45" rx="3" fill="none" stroke="#F28B6C" stroke-width="2"/>
+                            <circle cx="50" cy="47.5" r="12" fill="none" stroke="#F28B6C" stroke-width="2"/>
+                            <circle cx="50" cy="47.5" r="6" fill="#F28B6C"/>
+                            <rect x="65" y="30" width="8" height="8" rx="1" fill="none" stroke="#F28B6C" stroke-width="1.5"/>
+                        </svg>
+                    </div>
+                    <h3 class="method-card-title">SEEING</h3>
+                    <p class="method-card-subtitle">Input</p>
+                    <div class="method-card-content">
+                        <p>The camera acts as a sensor. It calculates <strong>movement</strong> and <strong>crowd density</strong> from the video feed.</p>
+                    </div>
+                </div>
+                
+                <!-- Arrow 1 -->
+                <div class="method-arrow-container">
+                    <div class="method-arrow-line"></div>
+                    <div class="method-arrow-head"></div>
+                </div>
+                
+                <!-- Step 02: MAPPING -->
+                <div class="method-card">
+                    <div class="method-card-icon">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="20" y="20" width="60" height="60" rx="5" fill="none" stroke="#F28B6C" stroke-width="2"/>
+                            <rect x="30" y="30" width="40" height="40" rx="3" fill="none" stroke="#F28B6C" stroke-width="1.5"/>
+                            <path d="M 40 50 L 50 40 L 60 50 L 50 60 Z" fill="#F28B6C" opacity="0.6"/>
+                            <circle cx="50" cy="50" r="4" fill="#F28B6C"/>
+                        </svg>
+                    </div>
+                    <h3 class="method-card-title">MAPPING</h3>
+                    <p class="method-card-subtitle">Logic</p>
+                    <div class="method-card-content">
+                        <p>The code translates this data onto the <strong>Meridian lines</strong> of the arm. This organizes the signals logically.</p>
+                    </div>
+                </div>
+                
+                <!-- Arrow 2 -->
+                <div class="method-arrow-container">
+                    <div class="method-arrow-line"></div>
+                    <div class="method-arrow-head"></div>
+                </div>
+                
+                <!-- Step 03: PROTOTYPING -->
+                <div class="method-card">
+                    <div class="method-card-icon">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="25" y="20" width="50" height="50" rx="3" fill="none" stroke="#F28B6C" stroke-width="2"/>
+                            <rect x="30" y="30" width="40" height="15" rx="2" fill="#F28B6C" opacity="0.3"/>
+                            <rect x="30" y="50" width="40" height="15" rx="2" fill="#F28B6C" opacity="0.5"/>
+                            <line x1="35" y1="35" x2="65" y2="35" stroke="#F28B6C" stroke-width="1.5"/>
+                            <line x1="35" y1="55" x2="65" y2="55" stroke="#F28B6C" stroke-width="1.5"/>
+                        </svg>
+                    </div>
+                    <h3 class="method-card-title">PROTOTYPING</h3>
+                    <p class="method-card-subtitle">Material</p>
+                    <div class="method-card-content">
+                        <p>I will test materials like <strong>Silicone</strong> (soft) and <strong>Plastic</strong> (hard). Materials act like <strong>filters</strong>—they change how the vibration travels on skin.</p>
+                    </div>
+                </div>
+                
+                <!-- Arrow 3 -->
+                <div class="method-arrow-container">
+                    <div class="method-arrow-line"></div>
+                    <div class="method-arrow-head"></div>
+                </div>
+                
+                <!-- Step 04: FEELING -->
+                <div class="method-card">
+                    <div class="method-card-icon">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M 30 40 L 50 20 L 70 40 L 70 70 L 30 70 Z" fill="none" stroke="#F28B6C" stroke-width="2" stroke-linejoin="round"/>
+                            <path d="M 50 20 L 50 50" stroke="#F28B6C" stroke-width="2"/>
+                            <circle cx="50" cy="50" r="3" fill="#F28B6C"/>
+                            <!-- Wave lines -->
+                            <path d="M 20 60 Q 30 55, 40 60 T 60 60 T 80 60" stroke="#F28B6C" stroke-width="1.5" fill="none" opacity="0.6"/>
+                            <path d="M 20 65 Q 30 60, 40 65 T 60 65 T 80 65" stroke="#F28B6C" stroke-width="1.5" fill="none" opacity="0.6"/>
+                        </svg>
+                    </div>
+                    <h3 class="method-card-title">FEELING</h3>
+                    <p class="method-card-subtitle">Output</p>
+                    <div class="method-card-content">
+                        <p>The final result is a <strong>Tactile Language</strong>: Smooth waves for safety, sharp clicks for objects.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Design Methods -->
+    <section id="design-methods" class="section">
+        <div class="container">
+            <h2 class="section-title">Design Methods</h2>
+            <div class="content-box">
+                <p>My project employs <strong>experimental</strong>, <strong>participatory</strong>, and <strong>speculative</strong> methods to explore new forms of sensory interaction.</p>
+                
+                <p>First, it is <strong>experimental</strong> because I use AI to translate visual data—like movement and crowd density—into vibration patterns. I am testing how these digital signals can be felt on the skin to create a new "tactile language" for navigation.</p>
+                
+                <p>Second, it is <strong>participatory</strong> because I work directly with blind and low-vision users. Instead of just guessing what they need, I co-design with them. I learn from their real-world feedback to find which tactile patterns feel most natural and intuitive.</p>
+                
+                <p>Finally, the work is <strong>speculative</strong> and slightly <strong>decolonizing</strong>. It imagines a future where our bodies—not screens—are the main interface. By using Traditional Chinese Medicine (TCM) concepts, I explore non-Western ways to connect digital information with the human body, challenging how we normally build technology.</p>
+            </div>
+            
+            <div class="design-tags">
+                <span class="tag">Experimental</span>
+                <span class="tag">Participatory</span>
+                <span class="tag">Speculative</span>
+                <span class="tag">Decolonizing</span>
+                <span class="tag">Accessible</span>
+                <span class="tag">Embodied</span>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Precedents -->
+    <section id="precedents" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Precedents</h2>
+            <div class="precedents-grid">
+                <div class="precedent-card">
+                    <div class="precedent-image">
+                        <div class="video-container-small">
+                            <iframe src="https://player.vimeo.com/video/79179138" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <h3>MIT inFORM</h3>
+                    <p>A shape-changing table that reacts to human gestures, making data physical through actuator grids and computational mapping.</p>
+                    <p class="precedent-note">Demonstrates how physical interfaces translate abstract data into tangible experiences. My project focuses on wearable devices rather than table-scale installations.</p>
+                    <a href="https://tangible.media.mit.edu/project/inform/" target="_blank" class="precedent-link">View Project →</a>
+                </div>
+
+                <div class="precedent-card">
+                    <div class="precedent-image">
+                        <img src="../assets/projects/port_7/images/precedent-replika.jpg" alt="Replika AI Companion interface" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <div class="image-placeholder-small" style="display:none;">
+                            <p>📷 Replika</p>
+                        </div>
+                    </div>
+                    <h3>Replika (AI Companion)</h3>
+                    <p>A chatbot app with adaptive, emotionally supportive voice/text interactions using machine learning for tone adaptation.</p>
+                    <p class="precedent-note">Shows how AI provides emotional support through voice. My project focuses specifically on blind users' needs with transparent, ethical design.</p>
+                    <a href="https://replika.com/" target="_blank" class="precedent-link">View Project →</a>
+                </div>
+
+                <div class="precedent-card">
+                    <div class="precedent-image">
+                        <img src="../assets/projects/port_7/images/22.jpg" alt="Wearable Multichannel Pulse Monitoring TCM sensor" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <div class="image-placeholder-small" style="display:none;">
+                            <p>📷 TCM Pulse Sensor</p>
+                        </div>
+                    </div>
+                    <h3>Wearable Multichannel Pulse Monitoring (TCM)</h3>
+                    <p>A wearable system using flexible pressure sensor arrays to detect pulse at three TCM positions (Chi, Cun, Guan), creating 3D pulse maps similar to doctors' fingertip sensations.</p>
+                    <p class="precedent-note">My project reverses this: instead of measuring the body, I design a way for the body to feel the world—turning sound into vibration along meridian points.</p>
+                    <a href="https://www.nature.com/articles/s41378-022-00349-3" target="_blank" class="precedent-link">View Research →</a>
+                </div>
+
+                <div class="precedent-card">
+                    <div class="precedent-image">
+                        <div class="video-container-small">
+                            <iframe src="https://www.youtube.com/embed/xw09UUoEETM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <h3>SubPac X1 (Haptic Audio)</h3>
+                    <p>A wearable haptic audio system that translates sound into body sensations through full-spectrum vibration, used by musicians and Deaf/hard-of-hearing users.</p>
+                    <p class="precedent-note">Demonstrates vibroacoustic communication. My project builds on this by focusing on spatial perception for blind users, not just music appreciation.</p>
+                    <a href="https://subpac.com/x1/" target="_blank" class="precedent-link">View Project →</a>
+                </div>
+
+                <div class="precedent-card">
+                    <div class="precedent-image">
+                        <img src="../assets/projects/port_7/images/seed.jpg" alt="Ear Seeds TCM Auriculotherapy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <div class="image-placeholder-small" style="display:none;">
+                            <p>📷 Ear Seeds</p>
+                        </div>
+                    </div>
+                    <h3>Ear Seeds (TCM Auriculotherapy)</h3>
+                    <p>A non-invasive TCM practice where small beads are placed on ear points to stimulate meridian pathways, used for stress, sleep, and pain relief.</p>
+                    <p class="precedent-note">Shows how TCM energy points can be applied to wearable devices. My project adapts this to wrist meridian points using vibration motors.</p>
+                    <a href="https://www.earseeds.com/" target="_blank" class="precedent-link">Learn More →</a>
+                </div>
+
+                <div class="precedent-card">
+                    <div class="precedent-image">
+                        <img src="../assets/projects/port_7/images/feel.jpg" alt="Feel Therapeutics Haptic Therapy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <div class="image-placeholder-small" style="display:none;">
+                            <p>📷 Feel Therapeutics</p>
+                        </div>
+                    </div>
+                    <h3>Feel Therapeutics (Haptic Therapy)</h3>
+                    <p>A platform using haptic technology and vibration patterns for therapeutic applications, supporting mental health and emotional well-being.</p>
+                    <p class="precedent-note">Demonstrates haptic technology for therapeutic support. My project combines this with spatial perception, aligning with the CARE mode for emotional support.</p>
+                    <a href="https://www.feeltherapeutics.com/" target="_blank" class="precedent-link">View Project →</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Proof of Concept (Main Focus) -->
+    <section id="prototype" class="section">
+        <div class="container">
+            <h2 class="section-title">Proof of Concept</h2>
+            
+            <!-- Concept Sketch -->
+            <div class="sketch-section" style="margin-top: 4rem;">
+                <h3 style="font-size: 1.8rem; font-weight: 600; color: #332B24; margin-bottom: 1.5rem; text-align: center;">Concept Sketch</h3>
+                <div class="sketch-container" style="display: flex; justify-content: center; align-items: center; padding: 2rem 0; max-width: 1000px; margin: 0 auto;">
+                    <img src="../assets/projects/port_7/images/sketch.png" alt="Concept sketch for Meridian Ribbon" style="max-width: 100%; width: 100%; height: auto; display: block; border-radius: 12px; box-shadow: 0 4px 16px rgba(51, 43, 36, 0.1);" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div class="image-placeholder-small" style="display:none;">
+                        <p>📷 Concept Sketch</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Three Modes -->
+            <div class="modes-detail">
+                <h3>Three Modes</h3>
+                <div class="modes-container">
+                    <div class="mode-card-detailed">
+                        <h4>FLOW</h4>
+                        <p class="mode-scenario"><strong>Scenario:</strong> Walking & Commuting.</p>
+                        <p class="mode-metaphor"><strong>Metaphor:</strong> Like a "parking sensor" for your wrist.</p>
+                        <div class="mode-feeling">
+                            <p><strong>Clear Path:</strong> The vibration feels like a smooth <strong>water stream</strong> flowing down your arm. It means "Go ahead."</p>
+                            <p><strong>Obstacle:</strong> The vibration <strong>stutters</strong> or flows backward. It means "Stop, something is blocking the way."</p>
+                        </div>
+                        <div class="mode-image">
+                            <svg class="flow-visual" viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="flowGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" style="stop-color:#F48A6A;stop-opacity:0.9" />
+                                        <stop offset="100%" style="stop-color:#F48A6A;stop-opacity:0.2" />
+                                    </linearGradient>
+                                </defs>
+                                <g class="wave-group">
+                                    <path class="wave wave1" d="M 0 50 Q 37.5 30, 75 50 T 150 50 T 225 50 T 300 50" fill="none" stroke="url(#flowGradient1)" stroke-width="1.5" />
+                                    <path class="wave wave2" d="M 0 50 Q 37.5 40, 75 50 T 150 50 T 225 50 T 300 50" fill="none" stroke="url(#flowGradient1)" stroke-width="1.5" />
+                                    <path class="wave wave3" d="M 0 50 Q 37.5 35, 75 50 T 150 50 T 225 50 T 300 50" fill="none" stroke="url(#flowGradient1)" stroke-width="1.5" />
+                                    <path class="wave wave4" d="M 0 50 Q 37.5 45, 75 50 T 150 50 T 225 50 T 300 50" fill="none" stroke="url(#flowGradient1)" stroke-width="1.5" />
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="mode-card-detailed">
+                        <h4>SENSE</h4>
+                        <p class="mode-scenario"><strong>Scenario:</strong> Standing still & observing.</p>
+                        <p class="mode-metaphor"><strong>Metaphor:</strong> "Touching the air" to feel the vibe.</p>
+                        <div class="mode-feeling">
+                            <p><strong>Busy/Crowded:</strong> The wrist feels <strong>rough textures</strong> (like sandpaper). It means the place is chaotic.</p>
+                            <p><strong>Quiet/Empty:</strong> The wrist feels <strong>slow, breathing waves</strong>. It means the space is calm and open.</p>
+                        </div>
+                        <div class="mode-image">
+                            <svg class="sense-visual" viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+                                <g class="particles">
+                                    <circle class="particle" cx="15" cy="20" r="1.2" fill="#F48A6A"/>
+                                    <circle class="particle" cx="35" cy="15" r="0.8" fill="#F48A6A"/>
+                                    <circle class="particle" cx="55" cy="30" r="1.5" fill="#F48A6A"/>
+                                    <circle class="particle" cx="25" cy="45" r="1" fill="#F48A6A"/>
+                                    <circle class="particle" cx="45" cy="50" r="1.3" fill="#F48A6A"/>
+                                    <circle class="particle" cx="70" cy="25" r="0.9" fill="#F48A6A"/>
+                                    <circle class="particle" cx="85" cy="40" r="1.1" fill="#F48A6A"/>
+                                    <circle class="particle" cx="105" cy="20" r="1.4" fill="#F48A6A"/>
+                                    <circle class="particle" cx="120" cy="35" r="0.7" fill="#F48A6A"/>
+                                    <circle class="particle" cx="140" cy="50" r="1.2" fill="#F48A6A"/>
+                                    <circle class="particle" cx="160" cy="25" r="1" fill="#F48A6A"/>
+                                    <circle class="particle" cx="180" cy="40" r="1.3" fill="#F48A6A"/>
+                                    <circle class="particle" cx="30" cy="65" r="0.9" fill="#F48A6A"/>
+                                    <circle class="particle" cx="50" cy="70" r="1.1" fill="#F48A6A"/>
+                                    <circle class="particle" cx="75" cy="60" r="1.4" fill="#F48A6A"/>
+                                    <circle class="particle" cx="95" cy="75" r="0.8" fill="#F48A6A"/>
+                                    <circle class="particle" cx="115" cy="65" r="1.2" fill="#F48A6A"/>
+                                    <circle class="particle" cx="135" cy="80" r="1" fill="#F48A6A"/>
+                                    <circle class="particle" cx="155" cy="70" r="1.3" fill="#F48A6A"/>
+                                    <circle class="particle" cx="175" cy="85" r="0.9" fill="#F48A6A"/>
+                                    <circle class="particle" cx="20" cy="10" r="1.1" fill="#F48A6A"/>
+                                    <circle class="particle" cx="100" cy="5" r="1.2" fill="#F48A6A"/>
+                                    <circle class="particle" cx="130" cy="12" r="0.8" fill="#F48A6A"/>
+                                    <circle class="particle" cx="10" cy="50" r="1.4" fill="#F48A6A"/>
+                                    <circle class="particle" cx="190" cy="55" r="1" fill="#F48A6A"/>
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="mode-card-detailed">
+                        <h4>FOCUS</h4>
+                        <p class="mode-scenario"><strong>Scenario:</strong> Pointing at objects.</p>
+                        <p class="mode-metaphor"><strong>Metaphor:</strong> Your finger becomes a "scanner."</p>
+                        <div class="mode-feeling">
+                            <p><strong>Action:</strong> You point your hand like a laser at a sign or object.</p>
+                            <p><strong>Feedback:</strong> The wrist gives a sharp <strong>"Click"</strong> (haptic impulse) when it locks onto a target, and the earbud reads the name (e.g., "Starbucks").</p>
+                        </div>
+                        <div class="mode-image">
+                            <svg class="focus-visual" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                <g transform="translate(100, 100)">
+                                    <circle class="ring ring1" cx="0" cy="0" r="25" fill="none" stroke="#F48A6A" stroke-width="1.5" opacity="0.9"/>
+                                    <circle class="ring ring2" cx="0" cy="0" r="45" fill="none" stroke="#F48A6A" stroke-width="1.2" opacity="0.7"/>
+                                    <circle class="ring ring3" cx="0" cy="0" r="65" fill="none" stroke="#F48A6A" stroke-width="1" opacity="0.5"/>
+                                    <circle class="ring ring4" cx="0" cy="0" r="85" fill="none" stroke="#F48A6A" stroke-width="0.8" opacity="0.4"/>
+                                    <line class="scan-line" x1="0" y1="0" x2="0" y2="-85" stroke="#F48A6A" stroke-width="1.2" opacity="0.8"/>
+                                    <circle class="center-dot" cx="0" cy="0" r="3.5" fill="#F48A6A" opacity="1"/>
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UI Prototype -->
+            <div class="ui-prototype-section" style="margin-top: 4rem;">
+                <h3 style="font-size: 1.8rem; font-weight: 600; color: #332B24; margin-bottom: 1.5rem; text-align: center;">UI Prototype</h3>
+                <p style="text-align: center; margin-bottom: 2.5rem; font-size: 1.1rem; line-height: 1.7; color: #4B423D; max-width: 900px; margin-left: auto; margin-right: auto;">The mobile app interface translates visual information into intuitive controls. Users can switch between FLOW, SENSE, and FOCUS modes, adjust sensitivity settings, and receive real-time spatial feedback through the wristband.</p>
+                <div class="ui-prototype-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 1200px; margin: 0 auto; align-items: stretch;">
+                    <div class="ui-frame-item" style="display: flex; flex-direction: column; height: 100%;">
+                        <div class="ui-frame-image-container" style="width: 100%; aspect-ratio: 9/16; background: var(--color-bg-soft); border-radius: 12px; overflow: hidden; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(51, 43, 36, 0.1); flex-shrink: 0; position: relative;">
+                            <img src="../assets/projects/port_7/images/33.png" alt="UI Prototype Frame 1 - Meridian Mapping & Tuning" style="width: 100%; height: 100%; object-fit: contain; display: block; position: absolute; top: 0; left: 0;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                            <div class="image-placeholder-small" style="display:none;">
+                                <p>📷 UI Frame 1</p>
+                            </div>
+                        </div>
+                        <h4 style="font-size: 1.1rem; color: #F48A6A; margin-bottom: 0.5rem; text-align: center; flex-shrink: 0;">Meridian Mapping & Tuning</h4>
+                        <p style="font-size: 0.95rem; color: #4B423D; text-align: center; line-height: 1.6; margin: 0; flex-grow: 1;">A live preview of the wrist meridian shows where vibrations will occur. Sliders let users adjust vibration intensity and sensitivity to match their comfort and perception.</p>
+                    </div>
+                    <div class="ui-frame-item" style="display: flex; flex-direction: column; height: 100%;">
+                        <div class="ui-frame-image-container" style="width: 100%; aspect-ratio: 9/16; background: var(--color-bg-soft); border-radius: 12px; overflow: hidden; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(51, 43, 36, 0.1); flex-shrink: 0; position: relative;">
+                            <img src="../assets/projects/port_7/images/22.png" alt="UI Prototype Frame 2 - Mode Selection" style="width: 100%; height: 100%; object-fit: contain; display: block; position: absolute; top: 0; left: 0;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                            <div class="image-placeholder-small" style="display:none;">
+                                <p>📷 UI Frame 2</p>
+                            </div>
+                        </div>
+                        <h4 style="font-size: 1.1rem; color: #F48A6A; margin-bottom: 0.5rem; text-align: center; flex-shrink: 0;">Mode Selection</h4>
+                        <p style="font-size: 0.95rem; color: #4B423D; text-align: center; line-height: 1.6; margin: 0; flex-grow: 1;">Users can switch between FLOW, SENSE, and FOCUS modes. Each mode changes the haptic behavior of the ribbon for navigation, ambient awareness, or precise object focus.</p>
+                    </div>
+                    <div class="ui-frame-item" style="display: flex; flex-direction: column; height: 100%;">
+                        <div class="ui-frame-image-container" style="width: 100%; aspect-ratio: 9/16; background: var(--color-bg-soft); border-radius: 12px; overflow: hidden; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(51, 43, 36, 0.1); flex-shrink: 0; position: relative;">
+                            <img src="../assets/projects/port_7/images/11.png" alt="UI Prototype Frame 3 - System Status" style="width: 100%; height: 100%; object-fit: contain; display: block; position: absolute; top: 0; left: 0;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                            <div class="image-placeholder-small" style="display:none;">
+                                <p>📷 UI Frame 3</p>
+                            </div>
+                        </div>
+                        <h4 style="font-size: 1.1rem; color: #F48A6A; margin-bottom: 0.5rem; text-align: center; flex-shrink: 0;">System Status</h4>
+                        <p style="font-size: 0.95rem; color: #4B423D; text-align: center; line-height: 1.6; margin: 0; flex-grow: 1;">The home screen shows connection status, battery level, and whether the Meridian Ribbon is actively translating visual input into touch.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Storyboard -->
+            <div class="storyboard-section" style="margin-top: 4rem;">
+                <h3 style="font-size: 1.8rem; font-weight: 600; color: #332B24; margin-bottom: 1.5rem; text-align: center;">A Day with Meridian Ribbon</h3>
+                <p class="storyboard-subtitle" style="text-align: center; margin-bottom: 2.5rem; font-size: 1.1rem; line-height: 1.7; color: #4B423D; max-width: 900px; margin-left: auto; margin-right: auto;">A storyboard showing how Meridian Ribbon changes a chaotic commute into a calm journey.</p>
+                <div class="storyboard-container" style="display: flex; justify-content: center; align-items: center; padding: 2rem 0; max-width: 1000px; margin: 0 auto;">
+                    <img src="../assets/projects/port_7/images/story.png" alt="A Day with Meridian Ribbon - Storyboard" class="storyboard-image" style="max-width: 100%; width: 100%; height: auto; display: block; border-radius: 12px; box-shadow: 0 4px 16px rgba(51, 43, 36, 0.1);">
+                </div>
+            </div>
+
+            <!-- System Flow -->
+            <div class="prototype-path-section" style="margin-top: 4rem;">
+                <h3 style="font-size: 1.8rem; font-weight: 600; color: #332B24; margin-bottom: 1.5rem; text-align: center;">System Flow</h3>
+                <div class="prototype-path-container" style="display: flex; justify-content: center; align-items: center; padding: 2rem 0; max-width: 800px; margin: 0 auto;">
+                    <img src="../assets/projects/port_7/images/Prototype%20Path.png" alt="Prototype Path - System Flow Diagram" style="max-width: 100%; width: 100%; height: auto; display: block;">
+                </div>
+                <p style="text-align: center; margin-top: 2rem; font-size: 1.1rem; line-height: 1.7; color: #4B423D; max-width: 900px; margin-left: auto; margin-right: auto;">The system combines computer vision, meridian mapping, and tactile feedback—helping blind and low-vision users feel their surroundings through a visual-to-tactile translation loop.</p>
+            </div>
+
+            <!-- Material Experiments -->
+            <div class="materials-section">
+                <h3>Material Experiments</h3>
+                <div class="materials-grid">
+                    <div class="material-item">
+                        <img src="../assets/projects/port_7/images/Silicone.png" alt="Silicone material" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <div class="image-placeholder-small" style="display:none;">
+                            <p>📷 Silicone</p>
+                        </div>
+                        <h4>Silicone</h4>
+                        <p>Soft, flexible - Smooth, cushioned - Calming mode</p>
+                    </div>
+                    <div class="material-item">
+                        <img src="../assets/projects/port_7/images/Fabric%3AFelt.png" alt="Fabric/Felt material" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <div class="image-placeholder-small" style="display:none;">
+                            <p>📷 Fabric</p>
+                        </div>
+                        <h4>Fabric/Felt</h4>
+                        <p>Breathable - Warm, skin-friendly - Long wear</p>
+                    </div>
+                    <div class="material-item">
+                        <img src="../assets/projects/port_7/images/3D-Printed%20TPU.png" alt="3D-Printed TPU material" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <div class="image-placeholder-small" style="display:none;">
+                            <p>📷 3D Print</p>
+                        </div>
+                        <h4>3D-Printed TPU</h4>
+                        <p>Customizable softness - Adjustable damping - Experimental</p>
+                    </div>
+                    <div class="material-item">
+                        <img src="../assets/projects/port_7/images/Fake%20fur.png" alt="Fake fur material" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <div class="image-placeholder-small" style="display:none;">
+                            <p>📷 Fake fur</p>
+                        </div>
+                        <h4>Fake fur</h4>
+                        <p>Textured surface - Luxurious feel - Sensory exploration</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Audience -->
+    <section id="audience" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Audience</h2>
+            
+            <div class="audience-section">
+                <div class="audience-card">
+                    <h3>Blind & Low-Vision Explorers</h3>
+                    <p>Designed for individuals seeking <strong>intuitive spatial awareness</strong> beyond traditional cane or audio navigation. Specifically for those who experience <strong>auditory fatigue</strong> from constant screen-reader usage and want a quieter, more somatic way to sense their surroundings.</p>
+                </div>
+
+                <div class="audience-card">
+                    <h3>Sensory Augmentation Enthusiasts</h3>
+                    <p>For anyone seeking <strong>"Digital Detox"</strong> or <strong>Somatic Mindfulness</strong>. In a world of visual overload, Meridian Ribbon offers a new way to connect with the environment through the body—treating the skin as a canvas for information, rooted in the philosophy of <strong>TCM and embodied cognition</strong>.</p>
+                </div>
+
+                <div class="audience-card">
+                    <h3>Inclusivity Considerations</h3>
+                    <ul>
+                        <li><strong>Different wrist sizes</strong> - Adjustable design with flexible materials</li>
+                        <li><strong>Alternative placements</strong> - Device can be adapted for arm, leg, or torso placement</li>
+                        <li><strong>Cost considerations</strong> - Open-source approach to keep costs accessible</li>
+                        <li><strong>Cultural sensitivity</strong> - Respectful integration of TCM concepts, clearly positioned as inspiration rather than medical application</li>
+                        <li><strong>Multiple language support</strong> - Interface should support multiple languages for global accessibility</li>
+                        <li><strong>Physical limitations</strong> - Design should accommodate users with limited hand mobility</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Future Development Roadmap -->
+    <section id="roadmap" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Future Development Roadmap</h2>
+            <p class="roadmap-subtitle">Experimental plan for material testing and algorithmic validation.</p>
+            
+            <div class="roadmap-grid">
+                <!-- Phase 1: Material Prototypes -->
+                <div class="roadmap-card">
+                    <div class="roadmap-icon">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="20" y="20" width="60" height="8" rx="2" fill="#F28B6C"/>
+                            <rect x="20" y="35" width="60" height="8" rx="2" fill="#F28B6C" opacity="0.8"/>
+                            <rect x="20" y="50" width="60" height="8" rx="2" fill="#F28B6C" opacity="0.6"/>
+                            <rect x="20" y="65" width="60" height="8" rx="2" fill="#F28B6C" opacity="0.4"/>
+                        </svg>
+                    </div>
+                    <h3>Phase 1: Material Prototypes</h3>
+                    <h4>Form Factor Exploration</h4>
+                    <div class="roadmap-details">
+                        <p>Develop <strong>Type A</strong>: Soft, flexible silicone version for maximum comfort.</p>
+                        <p>Develop <strong>Type B</strong>: Hard 3D-printed shell version for electronics protection.</p>
+                        <p class="roadmap-goal"><strong>Goal:</strong> Compare durability vs. ergonomics.</p>
+                    </div>
+                </div>
+
+                <!-- Phase 2: Logic Validation -->
+                <div class="roadmap-card">
+                    <div class="roadmap-icon">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="25" y="20" width="50" height="60" rx="5" fill="none" stroke="#F28B6C" stroke-width="3"/>
+                            <path d="M 35 45 L 45 55 L 65 35" stroke="#F28B6C" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="50" cy="50" r="8" fill="#F28B6C" opacity="0.3"/>
+                        </svg>
+                    </div>
+                    <h3>Phase 2: Logic Validation</h3>
+                    <h4>Blind Testing & Validation</h4>
+                    <div class="roadmap-details">
+                        <p>Conduct blind user tests to compare vibration patterns.</p>
+                        <p><strong>Variable A</strong>: TCM-Mapped Feedback (Structured).</p>
+                        <p><strong>Variable B</strong>: Random Feedback (Unstructured).</p>
+                        <p class="roadmap-goal"><strong>Goal:</strong> Validate that TCM logic is more intuitive.</p>
+                    </div>
+                </div>
+
+                <!-- Phase 3: The Feedback Loop -->
+                <div class="roadmap-card">
+                    <div class="roadmap-icon">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M 30 50 Q 50 30, 70 50 Q 50 70, 30 50" fill="none" stroke="#F28B6C" stroke-width="3" stroke-linecap="round"/>
+                            <path d="M 70 50 Q 50 70, 30 50 Q 50 30, 70 50" fill="none" stroke="#F28B6C" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+                            <circle cx="30" cy="50" r="5" fill="#F28B6C"/>
+                            <circle cx="70" cy="50" r="5" fill="#F28B6C"/>
+                        </svg>
+                    </div>
+                    <h3>Phase 3: The Feedback Loop</h3>
+                    <h4>Long-Term Adaptation</h4>
+                    <div class="roadmap-details">
+                        <p>Implement a <strong>2-week wear test</strong> for continuous data collection.</p>
+                        <p>Establish an <strong>AI Feedback Loop</strong>: The system learns from user comfort ratings.</p>
+                        <p class="roadmap-goal"><strong>Goal:</strong> Create a personalized, adaptive algorithm.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research & Bibliography -->
+    <section id="research" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Research & Bibliography</h2>
+            
+            <div class="bibliography">
+                <div class="bib-item">
+                    <h4>1. "Wearable Pulse Sensor Based on Traditional Chinese Medicine (TCM)" - Nature Case Study</h4>
+                    <p>This paper presents a soft wristband that measures pulse at Cun, Guan, and Chi points in TCM, turning subtle pulse changes into digital data. It is a key precedent for the project, showing how meridian-based TCM ideas can be translated into a contemporary wearable sensing system.</p>
+                    <p class="bib-note">Category: Traditional Chinese Medicine | <a href="https://www.nature.com/articles/s41378-022-00349-3" target="_blank">View Research →</a></p>
+                </div>
+
+                <div class="bib-item">
+                    <h4>2. inFORM – MIT Tangible Media Group</h4>
+                    <p>inFORM is a shape-changing interface that makes digital data physical through a dynamic pin array. It informs the project's interest in embodied interfaces, where abstract information becomes something users can physically feel and interact with.</p>
+                    <p class="bib-note">Category: Embodied Interfaces | <a href="https://tangible.media.mit.edu/project/inform/" target="_blank">View Project →</a></p>
+                </div>
+
+                <div class="bib-item">
+                    <h4>3. "Quantizer / The Shape of Data" – Sonification Platform for High-Energy Physics Data, MIT Media Lab</h4>
+                    <p>This project sonifies complex scientific data so that patterns can be heard and sometimes felt, supporting the idea of sonic–tactile data interfaces. It helps frame how data can be translated into sound structures that blind and low-vision users can interpret.</p>
+                    <p class="bib-note">Category: Data Sonification | <a href="https://www.media.mit.edu/projects/quantizer-sonification-platform-for-high-energy-physics-data/overview/" target="_blank">View Project →</a></p>
+                </div>
+
+                <div class="bib-item">
+                    <h4>4. "An investigation into the effectiveness of using acoustic touch to assist people who are blind"</h4>
+                    <p>This study evaluates acoustic touch as a way to support blind users in perceiving their environment. It is directly relevant to sound-based orientation and non-visual interaction goals, showing what works and what challenges remain in acoustic guidance.</p>
+                    <p class="bib-note">Category: Accessibility Research | <a href="https://www.researchgate.net/publication/374993206_An_investigation_into_the_effectiveness_of_using_acoustic_touch_to_assist_people_who_are_blind" target="_blank">View Research →</a></p>
+                </div>
+
+                <div class="bib-item">
+                    <h4>5. "Braille Band: Blind Support Haptic Wearable Band for Communication using Braille Language"</h4>
+                    <p>Braille Band proposes a wrist-worn haptic device that communicates information through Braille-like vibration. It supports the exploration of the wrist as an information surface and demonstrates how haptic patterns can become a language for non-visual communication.</p>
+                    <p class="bib-note">Category: Haptic Interfaces | <a href="https://arxiv.org/abs/1901.03329" target="_blank">View Research →</a></p>
+                </div>
+
+                <div class="bib-item">
+                    <h4>6. SAS Graphics Accelerator – SAS, with summary on Perkins School for the Blind</h4>
+                    <p>SAS Graphics Accelerator turns data visualizations into screen-reader and audio-friendly formats for blind users. It relates to sonic-tactile data work by showing existing approaches to non-visual data access, and highlights where the project extends this into more embodied, haptic forms.</p>
+                    <p class="bib-note">Category: Data Accessibility | <a href="https://www.perkins.org/resource/sas-graphics-accelerator-summary-page/" target="_blank">View Summary →</a></p>
+                </div>
+
+                <div class="bib-item">
+                    <h4>7. Replika – AI Companion</h4>
+                    <p>Replika is an AI chatbot and voice companion that focuses on emotional support and adaptive responses. It is a critical precedent for ethical and emotional AI voice interface, especially for thinking about trust, intimacy, and the risks of manipulative or opaque emotional AI.</p>
+                    <p class="bib-note">Category: Affective Computing | <a href="https://replika.com/" target="_blank">View Project →</a></p>
+                </div>
+
+                <div class="bib-item">
+                    <h4>8. Ear Seeds – Auriculotherapy Based on TCM</h4>
+                    <p>Ear Seeds use small beads placed on ear acupoints to provide gentle, continuous pressure for emotional and physical support. This precedent connects TCM meridian logic to simple, wearable point-based stimulation, informing the use of meridian-inspired points on the wrist.</p>
+                    <p class="bib-note">Category: Traditional Chinese Medicine | <a href="https://www.earseeds.com/" target="_blank">Learn More →</a></p>
+                </div>
+
+                <div class="bib-item">
+                    <h4>9. "What Is Gua Sha?" – Healthline</h4>
+                    <p>This article explains Gua Sha as a TCM scraping practice that follows muscle and meridian lines to improve circulation and release tension. It supports the use of meridian pathways as directional flows for vibration and heat along the arm, translating "energy movement" into interaction design.</p>
+                    <p class="bib-note">Category: Traditional Chinese Medicine | <a href="https://www.healthline.com/health/gua-sha" target="_blank">Learn More →</a></p>
+                </div>
+
+                <div class="bib-item">
+                    <h4>10. Feel – Emotion-Sensing Wearable by Feel Therapeutics</h4>
+                    <p>Feel is a wristband that uses biosignals (like skin conductance) to monitor stress and emotional states, paired with an app for mental health support. It provides a strong reference for combining sensing, emotion analysis, and wearable feedback, parallel to AI-assisted sound–emotion mapping.</p>
+                    <p class="bib-note">Category: Wearable Technology | <a href="https://www.feeltherapeutics.com/" target="_blank">View Project →</a></p>
+                </div>
+
+                <div class="bib-item">
+                    <h4>11. SubPac X1 – Wearable Audio System</h4>
+                    <p>SubPac X1 converts low-frequency sound into deep vibration that can be felt on the body. It is a key precedent for the sound-to-touch concept, showing how immersive vibroacoustic feedback can extend listening beyond the ears and onto the skin.</p>
+                    <p class="bib-note">Category: Haptic Audio | <a href="https://subpac.com/x1/" target="_blank">View Project →</a></p>
+                </div>
+            </div>
+
+            <div class="data-sources">
+                <h3>Data Sources</h3>
+                
+                <div class="source-item">
+                    <h4>1. Environmental Sound Data</h4>
+                    <p><strong>Source / Provenance:</strong></p>
+                    <p>Real-time audio captured through the user's phone microphone, including speech, ambient noise, and urban sound environments.</p>
+                    <p><strong>Reference Dataset:</strong></p>
+                    <p>UrbanSound Dataset – <a href="https://urbansounddataset.weebly.com/" target="_blank">https://urbansounddataset.weebly.com/</a></p>
+                    <p class="source-note"><strong>Politics / Limitations:</strong> Environmental recordings may capture people without consent. Sound varies across cultures and socioeconomic contexts, meaning AI interpretation may not generalize.</p>
+                </div>
+
+                <div class="source-item">
+                    <h4>2. AI Emotion & Sound Classification Models</h4>
+                    
+                    <p><strong>(a) RAVDESS – Emotional Speech & Song Dataset</strong></p>
+                    <p><a href="https://zenodo.org/record/1188976" target="_blank">https://zenodo.org/record/1188976</a></p>
+                    <p>Used widely for emotion recognition in speech.</p>
+                    <p class="source-note"><strong>Politics:</strong> Primarily Western, English-speaking actors → cultural bias in emotional expression.</p>
+                    
+                    <p><strong>(b) CREMA-D – Crowd-Sourced Emotional Audio Dataset</strong></p>
+                    <p><a href="https://github.com/CheyneyComputerScience/CREMA-D" target="_blank">https://github.com/CheyneyComputerScience/CREMA-D</a></p>
+                    <p>Contains labeled vocal expressions across emotion categories.</p>
+                    <p class="source-note"><strong>Politics:</strong> Skews toward white, male voices → risk of misclassification for marginalized groups.</p>
+                    
+                    <p><strong>(c) ESC-50 – Environmental Sound Classification Dataset</strong></p>
+                    <p><a href="https://github.com/karolpiczak/ESC-50" target="_blank">https://github.com/karolpiczak/ESC-50</a></p>
+                    <p>Common dataset for environmental sound classification.</p>
+                    <p class="source-note"><strong>Politics:</strong> Sound categories reflect Western soundscapes → may not represent global environments.</p>
+                </div>
+
+                <div class="source-item">
+                    <h4>3. TCM Meridian Maps & Acupoint Diagrams</h4>
+                    
+                    <p><strong>(a) WHO Standard Acupuncture Point Locations</strong></p>
+                    <p><a href="https://apps.who.int/iris/handle/10665/43829" target="_blank">https://apps.who.int/iris/handle/10665/43829</a></p>
+                    <p>Official WHO documentation standardizing acupoint locations.</p>
+                    <p class="source-note"><strong>Politics:</strong> Global standardization may flatten regional differences within Traditional Chinese Medicine.</p>
+                    
+                    <p><strong>(b) NCBI Bookshelf – Meridian System Overview</strong></p>
+                    <p><a href="https://www.ncbi.nlm.nih.gov/books/NBK92773/" target="_blank">https://www.ncbi.nlm.nih.gov/books/NBK92773/</a></p>
+                    <p>An NIH-published English overview explaining the classical meridian system, including pathways, qi flow, and the relationship between meridians and acupoints.</p>
+                    <p class="source-note"><strong>Politics:</strong> As a biomedical framing, it simplifies traditional knowledge systems and translates TCM concepts through Western academic language.</p>
+                </div>
+
+                <div class="source-item">
+                    <h4>4. User Feedback & Embodied Testing</h4>
+                    <p><strong>Source / Provenance:</strong></p>
+                    <p>Feedback from classmates, blind/low-vision participants, and your own embodied testing of tactile patterns and materials.</p>
+                    <p><strong>Reference Study:</strong></p>
+                    <p>Acoustic Touch Research – <a href="https://www.researchgate.net/publication/374993206_An_investigation_into_the_effectiveness_of_using_acoustic_touch_to_assist_people_who_are_blind" target="_blank">https://www.researchgate.net/publication/374993206_An_investigation_into_the_effectiveness_of_using_acoustic_touch_to_assist_people_who_are_blind</a></p>
+                    <p class="source-note"><strong>Politics / Limitations:</strong> Embodied sensory preferences vary widely; disability communities are not monolithic. Consent and privacy are essential when collecting feedback.</p>
+                </div>
+
+                <div class="source-item">
+                    <h4>5. Vibrotactile Pattern Libraries</h4>
+                    
+                    <p><strong>(a) SubPac – Tactile Frequency System</strong></p>
+                    <p><a href="https://subpac.com/x1/" target="_blank">https://subpac.com/x1/</a></p>
+                    <p>Shows how low-frequency audio can be translated into full-body vibration.</p>
+                    <p class="source-note"><strong>Politics:</strong> Originally developed for music and gaming, not accessibility → sensory assumptions may not fit all users.</p>
+                    
+                    <p><strong>(b) Skin-Integrated Haptics (Science Advances)</strong></p>
+                    <p><a href="https://doi.org/10.1126/sciadv.abd7887" target="_blank">https://doi.org/10.1126/sciadv.abd7887</a></p>
+                    <p>Research on soft, skin-conforming haptic interfaces.</p>
+                    <p class="source-note"><strong>Politics:</strong> Most studies are based on able-bodied participants → embedded sensory bias.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Meridian Ribbon</h3>
+                    <p>Capstone Project 2025</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#prototype">Prototype</a></li>
+                        <li><a href="#research">Research</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://github.com" target="_blank">GitHub</a></li>
+                        <li><a href="mailto:xj2349@columbia.edu">Email</a></li>
+                        <li><a href="https://xinyu-jiao.github.io/" target="_blank">Portfolio</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Xinyu (Shireen) Jiao. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/projects/port_7/script.js"></script>
+</body>
+</html>
