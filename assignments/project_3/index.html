@@ -11,11 +11,24 @@
   <meta property="og:description" content="A color-driven catalog of works organized by color spectrum.">
   <meta property="og:type" content="website">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <!-- Mouse halo -->
   <div class="mouse-halo" id="mouse-halo"></div>
+  
+  <!-- Particle container for click effects -->
+  <div class="particles-container" id="particles-container"></div>
+  
+  <!-- Double-click hint -->
+  <div class="double-click-hint" id="double-click-hint">
+    <span class="hint-icon">👆</span>
+    <span class="hint-text">Double-click any card to view fullscreen</span>
+    <button class="hint-close" id="hint-close" aria-label="Close hint">×</button>
+  </div>
 
   <div class="page">
 
@@ -27,7 +40,14 @@
         </p>
       </div>
       <div class="site-meta">
-        <button class="ghost-link" id="about-toggle">About</button>
+        <div class="meta-stats" id="meta-stats">
+          <span class="stat-item" id="total-count">0</span>
+          <span class="stat-label">works</span>
+        </div>
+        <div class="meta-actions">
+          <button class="ghost-link" id="share-toggle" title="Share">Share</button>
+          <button class="ghost-link" id="about-toggle">About</button>
+        </div>
       </div>
     </header>
 
@@ -41,19 +61,97 @@
 
       <div class="views">
         <span class="controls-label">View</span>
-        <button id="view-toggle" class="view-toggle-btn" type="button">
-          Grid · Original
-        </button>
+        <div class="view-controls">
+          <button id="favorites-toggle" class="view-toggle-btn" type="button" title="Show only favorites">
+            ♥ <span id="favorites-count">0</span>
+          </button>
+          <button id="view-toggle" class="view-toggle-btn" type="button">
+            Grid · Original
+          </button>
+        </div>
       </div>
     </section>
 
     <main>
+      <!-- Loading skeleton -->
+      <div class="loading-skeleton" id="loading-skeleton">
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+      </div>
+      
       <section id="collection" class="collection" aria-label="Works">
         <!-- JS will insert .item-card here -->
       </section>
     </main>
+    
+    <!-- Share modal -->
+    <div class="share-modal" id="share-modal" aria-hidden="true">
+      <div class="share-modal-content">
+        <button class="share-close" id="share-close" aria-label="Close share">×</button>
+        <h3>Share Collection</h3>
+        <div class="share-options">
+          <button class="share-btn" data-action="copy-link">
+            <span>🔗</span>
+            <span>Copy Link</span>
+          </button>
+          <button class="share-btn" data-action="export-favorites">
+            <span>📥</span>
+            <span>Export Favorites</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Toast notification -->
+    <div class="toast" id="toast" aria-live="polite" aria-atomic="true">
+      <span class="toast-message" id="toast-message"></span>
+    </div>
+    
+    <!-- Scroll to top button -->
+    <button class="scroll-to-top" id="scroll-to-top" aria-label="Scroll to top" aria-hidden="true">
+      ↑
+    </button>
+    
+    <!-- Image loading progress -->
+    <div class="loading-progress" id="loading-progress">
+      <div class="progress-bar" id="progress-bar"></div>
+    </div>
+    
+    <!-- Keyboard shortcuts hint -->
+    <div class="keyboard-hint" id="keyboard-hint" aria-hidden="true">
+      <div class="keyboard-hint-content">
+        <h3>Keyboard Shortcuts</h3>
+        <div class="shortcut-list">
+          <div class="shortcut-item">
+            <kbd>Esc</kbd>
+            <span>Close modals</span>
+          </div>
+          <div class="shortcut-item">
+            <kbd>←</kbd> <kbd>→</kbd>
+            <span>Navigate images</span>
+          </div>
+          <div class="shortcut-item">
+            <kbd>?</kbd>
+            <span>Show shortcuts</span>
+          </div>
+        </div>
+      </div>
+    </div>
 
 
+  </div>
+
+  <!-- Fullscreen Image Viewer -->
+  <div class="fullscreen-viewer" id="fullscreen-viewer" aria-hidden="true">
+    <button class="viewer-close" id="viewer-close" aria-label="Close viewer">×</button>
+    <img src="" alt="" id="viewer-image">
+    <div class="viewer-info" id="viewer-info"></div>
+    <button class="viewer-nav viewer-prev" id="viewer-prev" aria-label="Previous">‹</button>
+    <button class="viewer-nav viewer-next" id="viewer-next" aria-label="Next">›</button>
   </div>
 
   <!-- About overlay -->
