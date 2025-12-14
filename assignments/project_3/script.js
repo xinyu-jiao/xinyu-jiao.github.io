@@ -373,51 +373,6 @@ function hexToRgb(hex) {
     } : null;
 }
 
-// Mouse halo effect
-(function initMouseHalo() {
-    const halo = document.getElementById("mouse-halo");
-    if (!halo) return;
-
-    let mouseX = 0;
-    let mouseY = 0;
-    let haloX = 0;
-    let haloY = 0;
-    let isVisible = false;
-
-    // Smooth interpolation
-    function updateHalo() {
-        const dx = mouseX - haloX;
-        const dy = mouseY - haloY;
-        
-        // Easing factor (0.15 = smooth lag)
-        haloX += dx * 0.15;
-        haloY += dy * 0.15;
-        
-        halo.style.transform = `translate(${haloX}px, ${haloY}px) translate(-50%, -50%) scale(${isVisible ? 1 : 0.8})`;
-        
-        requestAnimationFrame(updateHalo);
-    }
-
-    document.addEventListener("mousemove", (e) => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-        
-        if (!isVisible) {
-            isVisible = true;
-            halo.classList.add("visible");
-            haloX = mouseX;
-            haloY = mouseY;
-        }
-    });
-
-    document.addEventListener("mouseleave", () => {
-        isVisible = false;
-        halo.classList.remove("visible");
-    });
-
-    // Start animation loop
-    updateHalo();
-})();
 
 // Scroll-driven card wave enhancement
 (function initScrollWave() {
