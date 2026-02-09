@@ -61,6 +61,7 @@
       <a href="#journey" class="nav-link block text-sm text-gray-400 hover:text-white transition-colors">User Journey</a>
       <a href="#features" class="nav-link block text-sm text-gray-400 hover:text-white transition-colors">Key Features</a>
       <a href="#stakeholders" class="nav-link block text-sm text-gray-400 hover:text-white transition-colors">Stakeholders</a>
+      <a href="#gallery" class="nav-link block text-sm text-gray-400 hover:text-white transition-colors">Gallery</a>
       <a href="#reflection" class="nav-link block text-sm text-gray-400 hover:text-white transition-colors">Reflection</a>
     </div>
   </nav>
@@ -193,14 +194,10 @@
         </h2>
         
         <div class="aspect-video bg-black rounded-2xl overflow-hidden">
-          <iframe 
-            class="w-full h-full"
-            src="https://www.youtube.com/embed/laeop6KD9D8" 
-            title="PRISM Product Video" 
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            allowfullscreen>
-          </iframe>
+          <video class="w-full h-full" controls>
+            <source src="./prism video (final version)_team7.MP4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
         </div>
         
         <p class="text-lg text-gray-400 mt-8 text-center">
@@ -323,6 +320,37 @@
         <p class="text-xl md:text-2xl text-gray-300 leading-relaxed">
           PRISM combines hardware sales with a subscription layer for advanced insights. For businesses, its detection pipeline can be exposed via SaaS dashboards and APIs.
         </p>
+      </div>
+    </section>
+
+    <!-- PROTOTYPE GALLERY -->
+    <section id="gallery" class="min-h-screen flex items-center px-8 md:px-16 lg:px-24 py-32">
+      <div class="max-w-6xl mx-auto w-full">
+        <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-16">
+          Hardware, App, and Brand
+        </h2>
+        
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="aspect-video bg-gray-900 rounded-2xl flex items-center justify-center text-gray-600">
+            <span class="text-lg">Image: PRISM Scanner</span>
+          </div>
+          
+          <div class="aspect-video bg-gray-900 rounded-2xl flex items-center justify-center text-gray-600">
+            <span class="text-lg">Image: App Interface</span>
+          </div>
+          
+          <div class="aspect-video bg-gray-900 rounded-2xl flex items-center justify-center text-gray-600">
+            <span class="text-lg">Image: Brand Identity</span>
+          </div>
+          
+          <div class="aspect-video bg-gray-900 rounded-2xl flex items-center justify-center text-gray-600">
+            <span class="text-lg">Image: User Testing</span>
+          </div>
+          
+          <div class="aspect-video bg-gray-900 rounded-2xl flex items-center justify-center text-gray-600 md:col-span-2">
+            <span class="text-lg">Image: Full Product Ecosystem</span>
+          </div>
+        </div>
       </div>
     </section>
 
