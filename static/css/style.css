@@ -419,9 +419,10 @@ body.landing-dismissed .main-content {
   display: flex !important;
   flex-direction: column !important;
   gap: 0 !important;
-  width: 100%;
-  margin: 0;
-  padding: 0;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  grid-template-columns: none !important;
 }
 
 .project-card {
@@ -435,11 +436,13 @@ body.landing-dismissed .main-content {
   color: inherit;
   display: flex !important;
   flex-direction: row !important;
-  align-items: center;
+  align-items: center !important;
   gap: 2rem;
   padding: 3rem 0;
   border-bottom: 1px solid #e5e5e5;
-  width: 100%;
+  width: 100% !important;
+  max-width: 100% !important;
+  flex: none !important;
 }
 
 .project-card:last-child {
