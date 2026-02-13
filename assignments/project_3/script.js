@@ -264,7 +264,7 @@ function renderItemsSync(items) {
 
         // Set card color variable for glow effect
         card.style.setProperty("--card-color", item.colorHex || "#f0574f");
-        
+
         // Set card index for wave animation
         card.style.setProperty("--card-index", index);
 
@@ -296,20 +296,20 @@ function renderItemsSync(items) {
             if (clickTimer === null) {
                 clickTimer = setTimeout(() => {
                     // Single click - change theme color
-                    const mainColor = item.colorHex || "#f0574f";
-                    document.documentElement.style.setProperty("--accent-color", mainColor);
+            const mainColor = item.colorHex || "#f0574f";
+            document.documentElement.style.setProperty("--accent-color", mainColor);
                     
-                    // Update accent-soft with new color for background gradient
-                    const rgb = hexToRgb(mainColor);
-                    if (rgb) {
-                        document.documentElement.style.setProperty(
-                            "--accent-soft", 
-                            `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, 0.08)`
-                        );
-                        document.documentElement.style.setProperty(
-                            "--accent-color-soft", 
-                            `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, 0.16)`
-                        );
+            // Update accent-soft with new color for background gradient
+            const rgb = hexToRgb(mainColor);
+            if (rgb) {
+                document.documentElement.style.setProperty(
+                    "--accent-soft", 
+                    `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, 0.08)`
+                );
+                document.documentElement.style.setProperty(
+                    "--accent-color-soft", 
+                    `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, 0.16)`
+                );
                         
                     // Update background colors based on clicked card
                     updateBackgroundColors(mainColor, rgb);
@@ -670,7 +670,7 @@ function updateViewerNav() {
         });
     }
 })();
-
+        
 // Double-click hint
 (function initDoubleClickHint() {
     const hint = document.getElementById("double-click-hint");
@@ -900,7 +900,7 @@ function showToast(message, duration = 3000) {
     document.addEventListener("click", (e) => {
         if (e.target.closest(".share-btn")) {
             const action = e.target.closest(".share-btn").dataset.action;
-            
+        
             if (action === "copy-link") {
                 const url = window.location.href;
                 navigator.clipboard.writeText(url).then(() => {

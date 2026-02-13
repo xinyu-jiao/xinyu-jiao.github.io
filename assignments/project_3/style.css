@@ -904,8 +904,8 @@ body.no-scroll {
 }
 
 .loading-skeleton.hidden {
-  display: none;
-}
+    display: none;
+  }
 
 .skeleton-card {
   aspect-ratio: 4 / 3;

@@ -1,33 +1,653 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jungle Blind Box</title>
+  <title>Nature Spirits Blind Box Series</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../static/css/project_style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================
+       DESIGN TOKEN SYSTEM
+       ============================================ */
+    
+    :root {
+      /* Color Palette */
+      --color-bg-primary: #faf9f6;        /* Warm off-white paper */
+      --color-bg-secondary: #f5f3f0;      /* Slightly warmer off-white */
+      
+      --color-primary: #6b8e7a;           /* Muted jade/forest green */
+      --color-primary-light: #8fa896;      /* Lighter jade */
+      --color-primary-dark: #4a6b5a;      /* Darker jade */
+      
+      --color-secondary: #7fb3b8;        /* Soft teal */
+      --color-secondary-light: #9fc9cd;   /* Lighter teal */
+      --color-secondary-dark: #5f9398;   /* Darker teal */
+      
+      --color-support-mist: #b8d4d8;     /* Mist blue */
+      --color-support-sage: #9db5a0;     /* Sage green */
+      --color-support-moss: #a8b89a;     /* Light moss */
+      
+      --color-accent: #d4b896;           /* Warm sand/gold */
+      --color-accent-light: #e8d4b8;     /* Lighter sand */
+      
+      --color-text-primary: #2c2c28;     /* Deep charcoal (not pure black) */
+      --color-text-secondary: #5a5a56;  /* Medium gray */
+      --color-text-muted: #8a8a86;      /* Light gray */
+      
+      --color-border: #e0ddd8;           /* Very light warm gray/green */
+      --color-border-light: #f0ede8;     /* Even lighter border */
+      
+      /* Typography */
+      --font-sans: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --font-weight-light: 300;
+      --font-weight-regular: 400;
+      --font-weight-medium: 500;
+      --font-weight-semibold: 600;
+      --font-weight-bold: 700;
+      
+      /* Spacing Scale (8px grid) */
+      --spacing-xs: 0.25rem;    /* 4px */
+      --spacing-sm: 0.5rem;     /* 8px */
+      --spacing-md: 1rem;       /* 16px */
+      --spacing-lg: 1.5rem;     /* 24px */
+      --spacing-xl: 2rem;       /* 32px */
+      --spacing-2xl: 3rem;      /* 48px */
+      --spacing-3xl: 4rem;      /* 64px */
+      --spacing-4xl: 6rem;      /* 96px */
+      
+      /* Border Radius */
+      --radius-sm: 0.5rem;      /* 8px */
+      --radius-md: 0.75rem;     /* 12px */
+      --radius-lg: 1rem;       /* 16px */
+      --radius-xl: 1.5rem;     /* 24px */
+      
+      /* Shadows */
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+      --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.08);
+      --shadow-soft: 0 4px 20px rgba(107, 142, 122, 0.12);
+    }
+    
+    /* ============================================
+       BASE STYLES
+       ============================================ */
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--color-bg-primary);
+      color: var(--color-text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
+    /* ============================================
+       COMPONENTS
+       ============================================ */
+    
+    /* Section Header */
+    .section-header {
+      margin-bottom: var(--spacing-2xl);
+    }
+    
+    .section-title {
+      display: inline-block;
+      background-color: var(--color-primary);
+      color: white;
+      padding: var(--spacing-sm) var(--spacing-lg);
+      font-size: 1.25rem;
+      font-weight: var(--font-weight-semibold);
+      letter-spacing: 0.02em;
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow-sm);
+    }
+    
+    /* Card Component */
+    .card {
+      background-color: white;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--spacing-xl);
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+    }
+    
+    .card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+    
+    .card-image {
+      width: 100%;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background-color: var(--color-bg-secondary);
+      border: 1px solid var(--color-border-light);
+    }
+    
+    /* Button Component */
+    .btn {
+      display: inline-block;
+      padding: var(--spacing-sm) var(--spacing-lg);
+      font-weight: var(--font-weight-medium);
+      border-radius: var(--radius-md);
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    
+    .btn-primary {
+      background-color: var(--color-primary);
+      color: white;
+      box-shadow: var(--shadow-sm);
+    }
+    
+    .btn-primary:hover {
+      background-color: var(--color-primary-dark);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-1px);
+    }
+    
+    .btn-secondary {
+      background-color: var(--color-secondary);
+      color: white;
+      box-shadow: var(--shadow-sm);
+    }
+    
+    .btn-secondary:hover {
+      background-color: var(--color-secondary-dark);
+      box-shadow: var(--shadow-md);
+    }
+    
+    /* Tag Component */
+    .tag {
+      display: inline-block;
+      padding: var(--spacing-xs) var(--spacing-md);
+      background-color: var(--color-support-sage);
+      color: var(--color-text-primary);
+      border-radius: var(--radius-sm);
+      font-size: 0.875rem;
+      font-weight: var(--font-weight-medium);
+      border: 1px solid var(--color-border);
+    }
+    
+    /* Character Grid */
+    .character-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--spacing-lg);
+    }
+    
+    .character-card {
+      background-color: white;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+    }
+    
+    .character-card:hover {
+      box-shadow: var(--shadow-soft);
+      transform: translateY(-4px);
+      border-color: var(--color-primary-light);
+    }
+    
+    .character-image {
+      width: 100%;
+      background-color: var(--color-bg-secondary);
+      display: block;
+      overflow: hidden;
+    }
+    
+    .character-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    .character-info {
+      padding: var(--spacing-md);
+    }
+    
+    .character-name {
+      font-size: 1.125rem;
+      font-weight: var(--font-weight-semibold);
+      color: var(--color-text-primary);
+      margin-bottom: var(--spacing-xs);
+    }
+    
+    .character-description {
+      font-size: 0.875rem;
+      color: var(--color-text-secondary);
+      line-height: 1.5;
+    }
+    
+    /* Layout Sections */
+    .section {
+      padding: var(--spacing-4xl) var(--spacing-xl);
+    }
+    
+    .section-alt {
+      background-color: var(--color-bg-secondary);
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--spacing-lg);
+    }
+    
+    /* Hero Section */
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 100%);
+      padding: var(--spacing-4xl) var(--spacing-xl);
+    }
+    
+    .hero-title {
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      font-weight: var(--font-weight-bold);
+      color: var(--color-text-primary);
+      margin-bottom: var(--spacing-lg);
+      line-height: 1.2;
+    }
+    
+    .hero-subtitle {
+      font-size: clamp(1.125rem, 2vw, 1.5rem);
+      color: var(--color-text-secondary);
+      margin-bottom: var(--spacing-2xl);
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+    
+    .hero-main-image {
+      width: 100%;
+      max-width: 800px;
+      height: auto;
+      margin: var(--spacing-3xl) auto;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      background-color: var(--color-bg-secondary);
+      display: block;
+      object-fit: contain;
+    }
+    
+    /* Back Button */
+    .back-button {
+      position: fixed;
+      top: var(--spacing-xl);
+      right: var(--spacing-xl);
+      z-index: 100;
+      background-color: white;
+      border: 1px solid var(--color-border);
+      padding: var(--spacing-sm) var(--spacing-lg);
+      border-radius: var(--radius-md);
+      color: var(--color-text-primary);
+      text-decoration: none;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+      font-weight: var(--font-weight-medium);
+    }
+    
+    .back-button:hover {
+      box-shadow: var(--shadow-md);
+      border-color: var(--color-primary);
+      color: var(--color-primary);
+    }
+  </style>
 </head>
 <body>
-  <div class="project-page">
-    <a href="../index.html#projects" class="back-link" aria-label="Back to projects">←</a>
-    
-    <div class="project-header">
-      <h1 class="project-title">Nature Spirits Blind Box Series</h1>
-      <p class="project-subtitle">A collection of fantasy characters in a lush jungle setting</p>
-    </div>
-    
-    <div class="project-content">
-      <div id="pdf-viewer-container" data-pdf-path="../assets/projects/port_8.pdf"></div>
-      
-      <div class="project-description">
-        <p>This project features a series of stylized fantasy character models set in a lush green landscape with traditional East Asian architecture in the background.</p>
-      </div>
-
-    </div>
-  </div>
   
-  <script src="../static/js/project.js"></script>
+  <!-- Back Button -->
+  <a href="../index.html#projects" class="back-button">← Back</a>
+
+  <!-- Main Content -->
+  <main>
+    
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="container text-center">
+        <h1 class="hero-title">Nature Spirits Blind Box Series</h1>
+        <p class="hero-subtitle">
+          A blind box series that transforms nature-inspired spirits into collectible characters through garment design and soft forms.
+        </p>
+        
+        <!-- Main Hero Image -->
+        <img src="./port_8/p81.jpg" alt="Nature Spirits Blind Box Series Main Image" class="hero-main-image">
+      </div>
+    </section>
+
+    <!-- PROJECT OVERVIEW -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Project Overview</h2>
+        </div>
+        <div class="card">
+          <p style="font-size: 1.125rem; color: var(--color-text-secondary); margin-bottom: var(--spacing-md);">
+            Nature Spirits Blind Box Series is a collectible designer blind box series inspired by natural elements and traditional garment aesthetics.
+          </p>
+          <p style="font-size: 1.125rem; color: var(--color-text-secondary);">
+            Each character represents a gentle spirit of nature, translated into soft forms, calm expressions, and stylized wearable designs.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONCEPT & INSPIRATION -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Concept & Inspiration</h2>
+        </div>
+        <div class="card">
+          <p style="font-size: 1.125rem; color: var(--color-text-secondary); margin-bottom: var(--spacing-md);">
+            The series draws inspiration from landscapes, seasons, and organic materials found in nature.
+          </p>
+          <p style="font-size: 1.125rem; color: var(--color-text-secondary);">
+            Rather than referencing specific locations, the characters embody abstract natural moods such as calmness, growth, flow, and balance.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHARACTER SYSTEM -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Character System</h2>
+        </div>
+        <div class="card">
+          <p style="font-size: 1.125rem; color: var(--color-text-secondary); margin-bottom: var(--spacing-md);">
+            Each figure in the Nature Spirits series represents a different aspect of nature, such as water, plants, wind, or earth.
+          </p>
+          <p style="font-size: 1.125rem; color: var(--color-text-secondary); margin-bottom: var(--spacing-md);">
+            Their identities are expressed through garment silhouettes, color palettes, and subtle accessories.
+          </p>
+          <p style="font-size: 1.125rem; color: var(--color-primary); font-style: italic; font-weight: var(--font-weight-medium);">
+            Garments function as a visual language that connects each spirit to its natural element.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHARACTER INTRODUCTIONS -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Character Introductions</h2>
+        </div>
+        
+        <div class="character-grid">
+          <!-- 9 Character Cards -->
+          <div class="character-card">
+            <div class="character-image">
+              <img src="./port_8/1 .png" alt="Character 1">
+            </div>
+            <div class="character-info">
+              <h3 class="character-name">Character Name</h3>
+              <p class="character-description">Character description</p>
+            </div>
+          </div>
+          <div class="character-card">
+            <div class="character-image">
+              <img src="./port_8/2.png" alt="Character 2">
+            </div>
+            <div class="character-info">
+              <h3 class="character-name">Character Name</h3>
+              <p class="character-description">Character description</p>
+            </div>
+          </div>
+          <div class="character-card">
+            <div class="character-image">
+              <img src="./port_8/3.png" alt="Character 3">
+            </div>
+            <div class="character-info">
+              <h3 class="character-name">Character Name</h3>
+              <p class="character-description">Character description</p>
+            </div>
+          </div>
+          <div class="character-card">
+            <div class="character-image">
+              <img src="./port_8/4.png" alt="Character 4">
+            </div>
+            <div class="character-info">
+              <h3 class="character-name">Character Name</h3>
+              <p class="character-description">Character description</p>
+            </div>
+          </div>
+          <div class="character-card">
+            <div class="character-image">
+              <img src="./port_8/5.png" alt="Character 5">
+            </div>
+            <div class="character-info">
+              <h3 class="character-name">Character Name</h3>
+              <p class="character-description">Character description</p>
+            </div>
+          </div>
+          <div class="character-card">
+            <div class="character-image">
+              <img src="./port_8/6.png" alt="Character 6">
+            </div>
+            <div class="character-info">
+              <h3 class="character-name">Character Name</h3>
+              <p class="character-description">Character description</p>
+            </div>
+          </div>
+          <div class="character-card">
+            <div class="character-image">
+              <img src="./port_8/7.png" alt="Character 7">
+            </div>
+            <div class="character-info">
+              <h3 class="character-name">Character Name</h3>
+              <p class="character-description">Character description</p>
+            </div>
+          </div>
+          <div class="character-card">
+            <div class="character-image">
+              <img src="./port_8/8.png" alt="Character 8">
+            </div>
+            <div class="character-info">
+              <h3 class="character-name">Character Name</h3>
+              <p class="character-description">Character description</p>
+            </div>
+          </div>
+          <div class="character-card">
+            <div class="character-image">
+              <img src="./port_8/9.png" alt="Character 9">
+            </div>
+            <div class="character-info">
+              <h3 class="character-name">Character Name</h3>
+              <p class="character-description">Character description</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GARMENT & COLOR -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Garment & Color</h2>
+        </div>
+        <div class="card">
+          <p style="font-size: 1.125rem; color: var(--color-text-secondary); margin-bottom: var(--spacing-md);">
+            The garment designs are inspired by traditional silhouettes and simplified for collectible figures.
+          </p>
+          <p style="font-size: 1.125rem; color: var(--color-text-secondary); margin-bottom: var(--spacing-xl);">
+            Colors are derived from natural environments, including soft greens, river blues, earthy tones, and seasonal pastels.
+          </p>
+          
+          <!-- Color Palette -->
+          <div style="display: flex; flex-wrap: wrap; gap: var(--spacing-md); justify-content: center; margin-top: var(--spacing-xl);">
+            <div style="width: 64px; height: 64px; border-radius: 50%; background-color: #f5c2a0; border: 2px solid white; box-shadow: var(--shadow-sm);"></div>
+            <div style="width: 64px; height: 64px; border-radius: 50%; background-color: #a8d5ba; border: 2px solid white; box-shadow: var(--shadow-sm);"></div>
+            <div style="width: 64px; height: 64px; border-radius: 50%; background-color: #f5b8c4; border: 2px solid white; box-shadow: var(--shadow-sm);"></div>
+            <div style="width: 64px; height: 64px; border-radius: 50%; background-color: #9bb5c8; border: 2px solid white; box-shadow: var(--shadow-sm);"></div>
+            <div style="width: 64px; height: 64px; border-radius: 50%; background-color: #b8d4a8; border: 2px solid white; box-shadow: var(--shadow-sm);"></div>
+            <div style="width: 64px; height: 64px; border-radius: 50%; background-color: #f5e6a0; border: 2px solid white; box-shadow: var(--shadow-sm);"></div>
+            <div style="width: 64px; height: 64px; border-radius: 50%; background-color: #f5c89e; border: 2px solid white; box-shadow: var(--shadow-sm);"></div>
+            <div style="width: 64px; height: 64px; border-radius: 50%; background-color: #c4a8d5; border: 2px solid white; box-shadow: var(--shadow-sm);"></div>
+            <div style="width: 64px; height: 64px; border-radius: 50%; background-color: #d4b896; border: 2px solid white; box-shadow: var(--shadow-sm);"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLIND BOX & PACKAGING -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Blind Box & Packaging</h2>
+        </div>
+        <div class="card" style="margin-bottom: var(--spacing-xl);">
+          <p style="font-size: 1.125rem; color: var(--color-text-secondary); margin-bottom: var(--spacing-md);">
+            Each figure is packaged in a blind box format, allowing for random discovery and collection.
+          </p>
+          <p style="font-size: 1.125rem; color: var(--color-text-secondary);">
+            The packaging design reflects the calm and poetic tone of the Nature Spirits universe.
+          </p>
+        </div>
+        
+        <!-- Packaging Display -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--spacing-xl);">
+          <div class="card">
+            <div class="card-image" style="aspect-ratio: 1; display: flex; align-items: center; justify-content: center; margin-bottom: var(--spacing-md);">
+              <span style="color: var(--color-text-muted);">Closed Box</span>
+            </div>
+            <p style="text-align: center; color: var(--color-text-secondary); font-weight: var(--font-weight-medium);">Closed Box</p>
+          </div>
+          <div class="card">
+            <div class="card-image" style="aspect-ratio: 1; display: flex; align-items: center; justify-content: center; margin-bottom: var(--spacing-md);">
+              <span style="color: var(--color-text-muted);">Exploded View</span>
+            </div>
+            <p style="text-align: center; color: var(--color-text-secondary); font-weight: var(--font-weight-medium);">Exploded View</p>
+          </div>
+          <div class="card">
+            <div class="card-image" style="aspect-ratio: 1; display: flex; align-items: center; justify-content: center; margin-bottom: var(--spacing-md);">
+              <span style="color: var(--color-text-muted);">Contents</span>
+            </div>
+            <p style="text-align: center; color: var(--color-text-secondary); font-weight: var(--font-weight-medium);">Contents</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FULL COLLECTION DISPLAY -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Full Collection Display</h2>
+        </div>
+        
+        <div class="card" style="background-color: var(--color-bg-secondary); border-color: var(--color-border);">
+          <div class="character-grid" style="grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));">
+            <div class="character-card" style="padding: 0;">
+              <div class="character-image" style="display: flex; align-items: center; justify-content: center;">
+                <span style="color: var(--color-text-muted); font-size: 0.75rem;">1</span>
+              </div>
+            </div>
+            <div class="character-card" style="padding: 0;">
+              <div class="character-image" style="display: flex; align-items: center; justify-center;">
+                <span style="color: var(--color-text-muted); font-size: 0.75rem;">2</span>
+              </div>
+            </div>
+            <div class="character-card" style="padding: 0;">
+              <div class="character-image" style="display: flex; align-items: center; justify-center;">
+                <span style="color: var(--color-text-muted); font-size: 0.75rem;">3</span>
+              </div>
+            </div>
+            <div class="character-card" style="padding: 0;">
+              <div class="character-image" style="display: flex; align-items: center; justify-center;">
+                <span style="color: var(--color-text-muted); font-size: 0.75rem;">4</span>
+              </div>
+            </div>
+            <div class="character-card" style="padding: 0;">
+              <div class="character-image" style="display: flex; align-items: center; justify-center;">
+                <span style="color: var(--color-text-muted); font-size: 0.75rem;">5</span>
+              </div>
+            </div>
+            <div class="character-card" style="padding: 0;">
+              <div class="character-image" style="display: flex; align-items: center; justify-center;">
+                <span style="color: var(--color-text-muted); font-size: 0.75rem;">6</span>
+              </div>
+            </div>
+            <div class="character-card" style="padding: 0;">
+              <div class="character-image" style="display: flex; align-items: center; justify-center;">
+                <span style="color: var(--color-text-muted); font-size: 0.75rem;">7</span>
+              </div>
+            </div>
+            <div class="character-card" style="padding: 0;">
+              <div class="character-image" style="display: flex; align-items: center; justify-center;">
+                <span style="color: var(--color-text-muted); font-size: 0.75rem;">8</span>
+              </div>
+            </div>
+            <div class="character-card" style="padding: 0;">
+              <div class="character-image" style="display: flex; align-items: center; justify-center;">
+                <span style="color: var(--color-text-muted); font-size: 0.75rem;">9</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- THREE-VIEW DRAWINGS -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Three-View Drawings</h2>
+        </div>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: var(--spacing-md);">
+          <!-- 9 characters × 3 views = 27 placeholders -->
+          <div class="card" style="padding: var(--spacing-sm);">
+            <div style="aspect-ratio: 1; display: flex; align-items: center; justify-center; background-color: var(--color-bg-secondary); border-radius: var(--radius-sm);">
+              <span style="color: var(--color-text-muted); font-size: 0.75rem;">1-F</span>
+            </div>
+          </div>
+          <div class="card" style="padding: var(--spacing-sm);">
+            <div style="aspect-ratio: 1; display: flex; align-items: center; justify-center; background-color: var(--color-bg-secondary); border-radius: var(--radius-sm);">
+              <span style="color: var(--color-text-muted); font-size: 0.75rem;">1-S</span>
+            </div>
+          </div>
+          <div class="card" style="padding: var(--spacing-sm);">
+            <div style="aspect-ratio: 1; display: flex; align-items: center; justify-center; background-color: var(--color-bg-secondary); border-radius: var(--radius-sm);">
+              <span style="color: var(--color-text-muted); font-size: 0.75rem;">1-B</span>
+            </div>
+          </div>
+          <!-- Continue pattern for remaining characters... -->
+          <div class="card" style="padding: var(--spacing-sm);">
+            <div style="aspect-ratio: 1; display: flex; align-items: center; justify-center; background-color: var(--color-bg-secondary); border-radius: var(--radius-sm);">
+              <span style="color: var(--color-text-muted); font-size: 0.75rem;">...</span>
+            </div>
+          </div>
+        </div>
+        <p style="text-align: center; color: var(--color-text-muted); margin-top: var(--spacing-lg); font-size: 0.875rem;">
+          (Placeholder for 9 characters × 3 views = 27 drawings)
+        </p>
+      </div>
+    </section>
+
+  </main>
+
 </body>
 </html>
