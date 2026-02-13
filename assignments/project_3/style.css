@@ -844,34 +844,72 @@ body.no-scroll {
   .page {
     margin-top: 20px;
     padding: 0 14px;
+    max-width: 100%;
   }
 
   .site-header {
     flex-direction: column;
     gap: 12px;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+  }
+
+  .site-title-block {
+    max-width: 100%;
+  }
+
+  .site-title {
+    font-size: 24px;
+    margin-bottom: 4px;
+  }
+
+  .site-subtitle {
+    font-size: 12px;
   }
 
   .site-meta {
     text-align: left;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .meta-stats {
+    margin-bottom: 8px;
+  }
+
+  .meta-actions {
+    flex-wrap: wrap;
+    gap: 8px;
   }
 
   .controls {
     flex-direction: column;
     gap: 12px;
+    padding: 12px 0 14px;
+    margin-bottom: 20px;
   }
 
   .filter-scroll {
     overflow-x: auto;
     white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 4px;
   }
 
   .filter-btn {
     white-space: nowrap;
+    font-size: 10px;
+    padding: 3px 8px;
   }
 
-  /* Disable 3D effects on mobile */
+  .collection {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+  }
+
   .item-card {
     transform: translateY(0) scale(1) !important;
+    border-radius: var(--radius-md);
   }
 
   .item-card:hover {
@@ -882,16 +920,109 @@ body.no-scroll {
     display: none;
   }
 
-
   /* Disable wave animations on mobile */
   .item-card {
     animation: none !important;
+  }
+
+  .item-card figure {
+    border-radius: var(--radius-md);
+    display: flex !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 120px;
+    aspect-ratio: 4 / 3;
+  }
+
+  .item-card img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  .item-card figcaption {
+    font-size: 10px;
+    padding-top: 4px;
+  }
+
+  .item-card .meta p {
+    font-size: 10px;
   }
 
   body::before,
   body::after {
     animation: none;
     opacity: 0.3;
+  }
+
+  .double-click-hint {
+    font-size: 12px;
+    padding: 8px 12px;
+    bottom: 16px;
+    left: 14px;
+    right: 14px;
+    max-width: calc(100% - 28px);
+  }
+
+  .hint-text {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page {
+    padding: 0 12px;
+    margin-top: 16px;
+  }
+
+  .site-title {
+    font-size: 20px;
+  }
+
+  .site-subtitle {
+    font-size: 11px;
+  }
+
+  .collection {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 10px;
+  }
+
+  .item-card figure {
+    min-height: 100px;
+  }
+
+  .item-card img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  .item-card figcaption {
+    font-size: 9px;
+  }
+
+  .item-card .meta p {
+    font-size: 9px;
+  }
+
+  .stat-item {
+    font-size: 20px;
+  }
+
+  .stat-label {
+    font-size: 10px;
+  }
+
+  .ghost-link {
+    font-size: 11px;
+    padding: 3px 8px;
   }
 }
 
