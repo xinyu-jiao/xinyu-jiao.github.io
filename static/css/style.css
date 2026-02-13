@@ -27,6 +27,132 @@ body {
     letter-spacing: var(--landing-body-spacing);
 }
 
+/* 顶部导航栏 */
+.top-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: transparent;
+    padding: 1rem 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* 滚动时隐藏导航栏 */
+body.landing-dismissed .top-navbar.navbar-scrolled {
+    transform: translateY(-100%) !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    visibility: hidden !important;
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Dancing Script', 'Caveat', cursive;
+    letter-spacing: 0.02em;
+    transition: all 0.3s ease;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    position: relative;
+    display: inline-block;
+    transform: rotate(-2deg);
+}
+
+.nav-logo::before {
+    content: '✨';
+    position: absolute;
+    left: -1.2rem;
+    top: 50%;
+    transform: translateY(-50%) rotate(-15deg);
+    font-size: 0.8rem;
+    opacity: 0.8;
+    animation: twinkle 2s ease-in-out infinite;
+}
+
+.nav-logo::after {
+    content: '✨';
+    position: absolute;
+    right: -1.2rem;
+    top: 50%;
+    transform: translateY(-50%) rotate(15deg);
+    font-size: 0.8rem;
+    opacity: 0.8;
+    animation: twinkle 2s ease-in-out infinite 0.5s;
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0.8;
+        transform: translateY(-50%) scale(1) rotate(var(--rotation, 0deg));
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(-50%) scale(1.2) rotate(var(--rotation, 0deg));
+    }
+}
+
+.nav-logo:hover {
+    transform: rotate(0deg) scale(1.1);
+    text-shadow: 0 4px 12px rgba(255, 255, 255, 0.3), 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.nav-logo:hover::before,
+.nav-logo:hover::after {
+    animation-duration: 1s;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+    transition: opacity 0.3s ease;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.nav-link:hover {
+    opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+    .nav-container {
+        padding: 0 1.5rem;
+    }
+    
+    .nav-logo {
+        font-size: 1rem;
+    }
+    
+    .nav-menu {
+        gap: 1.5rem;
+    }
+    
+    .nav-link {
+        font-size: 0.9rem;
+    }
+}
+
 .content {
     width: 100%;
     min-height: 100vh;
@@ -116,6 +242,7 @@ column-unit {
 
 column-unit[slot="0"] {
     padding-right: 0;
+    margin-top: 6rem;
 }
 
 column-unit[slot="1"] {
@@ -195,6 +322,37 @@ column-unit[slot="1"] .cover {
     margin-left: 0;
 }
 
+.intro-main {
+    font-size: 2.5rem;
+    font-weight: 700;
+    font-style: italic;
+    line-height: 1.2;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+    letter-spacing: -0.02em;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.intro-subtitle {
+    font-size: 1.8rem;
+    font-weight: 700;
+    font-style: italic;
+    line-height: 1.3;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+    letter-spacing: -0.01em;
+    display: block;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+}
+
+.intro-body {
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.6;
+    font-family: 'General Sans', 'Manrope', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+    letter-spacing: var(--landing-body-spacing);
+}
+
 a {
     color: #ffffff;
     text-decoration: none;
@@ -228,6 +386,18 @@ a:active {
     column-unit[slot="1"] .cover {
         font-size: 1.2rem;
     }
+    
+    .intro-main {
+        font-size: 2rem;
+    }
+    
+    .intro-subtitle {
+        font-size: 1.5rem;
+    }
+    
+    .intro-body {
+        font-size: 1.1rem;
+    }
 }
 
 @media (max-width: 1024px) {
@@ -248,6 +418,18 @@ a:active {
     
     column-unit[slot="1"] .cover {
         font-size: 1.1rem;
+    }
+    
+    .intro-main {
+        font-size: 1.8rem;
+    }
+    
+    .intro-subtitle {
+        font-size: 1.3rem;
+    }
+    
+    .intro-body {
+        font-size: 1rem;
     }
 }
 
@@ -273,6 +455,18 @@ a:active {
         line-height: 1.6;
     }
     
+    .intro-main {
+        font-size: 1.5rem;
+    }
+    
+    .intro-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .intro-body {
+        font-size: 0.95rem;
+    }
+    
     .social-icons {
         gap: 0.6rem;
     }
@@ -294,6 +488,18 @@ a:active {
     
     column-unit[slot="1"] .cover {
         font-size: 0.95rem;
+    }
+    
+    .intro-main {
+        font-size: 1.3rem;
+    }
+    
+    .intro-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .intro-body {
+        font-size: 0.9rem;
     }
     
     .social-icons {
@@ -356,36 +562,33 @@ body.landing-dismissed .landing-section {
 }
 
 .back-arrow {
-  position: fixed;
-  top: 24px;
-  left: 24px;
-  width: 48px;
-  height: 48px;
-  background: transparent;
-  color: #111;
-  border: none;
-  border-radius: 50%;
-  font-size: 24px;
-  cursor: pointer;
-  z-index: 100;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
+  display: none !important;
 }
 
-body.landing-dismissed .back-arrow {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: all;
+.back-arrow {
+  display: none !important;
 }
 
-.back-arrow:hover {
-  background: rgba(0, 0, 0, 0.08);
-  transform: scale(1.15);
+/* 项目页面时导航栏样式 */
+body.landing-dismissed .top-navbar {
+  background: rgba(255, 255, 255, 0.98);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0.5rem 0;
+}
+
+body.landing-dismissed .nav-logo {
+  color: #333;
+  text-shadow: none;
+}
+
+body.landing-dismissed .nav-logo::before,
+body.landing-dismissed .nav-logo::after {
+  opacity: 0.4;
+}
+
+body.landing-dismissed .nav-link {
+  color: #333;
+  text-shadow: none;
 }
 
 .main-content {

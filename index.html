@@ -13,6 +13,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Inter 字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- 艺术字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Caveat:wght@400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
     
     <!-- SEO Meta -->
     <meta name="description" content="Personal website of Xinyu Jiao">
@@ -23,6 +27,17 @@
 </head>
 <body class="f-f">
     <customhtml></customhtml>
+    
+    <!-- 顶部导航栏 -->
+    <nav class="top-navbar">
+        <div class="nav-container">
+            <a href="#" id="nav-logo-link" class="nav-logo">Xinyu Jiao</a>
+            <ul class="nav-menu">
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+            </ul>
+        </div>
+    </nav>
     
     <!-- 返回按钮 -->
     <button class="back-arrow" id="back-arrow" aria-label="Back to home">←</button>
@@ -63,7 +78,7 @@
                                                 <a href="https://www.linkedin.com/in/xinyu-jiao-245633256" class="icon-link" target="_blank" title="LinkedIn">
                                                     <img src="./assets/icons/linkedin.png" alt="LinkedIn">
                                                 </a>
-                                                <a href="./assets/resume/Resume_Xinyu_Jiao.pdf" class="icon-link" target="_blank" title="Resume">
+                                                <a href="./assets/resume/Resume_Xinyu_Jiao_2026 (2).pdf" class="icon-link" target="_blank" title="Resume">
                                                     <img src="./assets/icons/resume.png" alt="Resume">
                                                 </a>
                                                 <a href="https://github.com/xinyu-jiao" class="icon-link" target="_blank" title="GitHub">
@@ -76,11 +91,12 @@
                                     
                                     <column-unit slot="1">
                                         <span class="cover">
-                                            Hi, I'm Xinyu (Shireen) Jiao — a graduate student in Computational Design at Columbia University GSAPP.<br>
+                                            <span class="intro-main">Hi, I'm Xinyu</span><br>
+                                            <span class="intro-subtitle">a Computational & Interaction Designer</span><br>
                                             <br>
-                                            With a background in Product Design, I design and prototype AI-powered digital products. My work focuses on turning complex ideas into clear user flows, interactive prototypes, and practical systems that people can actually use.<br>
+                                            <span class="intro-body">With a background in Product Design, I design and prototype AI-powered digital products. My work focuses on turning complex ideas into clear user flows, interactive prototypes, and practical systems that people can actually use.</span><br>
                                             <br>
-                                            I'm interested in building thoughtful, human-centered technology.<br>
+                                            <span class="intro-body">I'm interested in building thoughtful, human-centered technology.</span><br>
                                             <br>
                                             <a href="#" id="more-btn" rel="history" style="font-size: 30px;">More</a>
                                         </span>
@@ -99,13 +115,13 @@
     
     <!-- 项目展示区域 -->
     <main class="main-content" id="main-content">
-        <section class="projects" aria-label="All projects">
+        <section class="projects" id="projects" aria-label="All projects">
             <div class="projects-grid" id="projects-grid" aria-label="Project gallery">
                 <a href="https://tholospartners.com/" class="project-card" tabindex="0" target="_blank" rel="noopener noreferrer">
                     <img src="./assets/projects/covers/port_9.png" alt="Tholos Partners project">
                     <div class="project-content">
                         <div class="project-tags">Brand Website • UI Design • B2B (Live)</div>
-                        <h3>Tholos Partners Website</h3>
+                        <h3>Tholos Partners</h3>
                         <p style="font-size: 0.9rem; color: #666; margin: -0.75rem 0 1rem 0; font-style: italic;">WAhA Design Lab</p>
                         <p>Designed and built an investor-facing website for Tholos Partners, translating a complex real estate private equity strategy into clear messaging, structured navigation, and a polished brand presence.</p>
                         <span class="project-read-more">tholospartners.com →</span>
@@ -116,7 +132,7 @@
                     <img src="./assets/projects/covers/port_10.png" alt="ODYSS.LIFE Website project">
                     <div class="project-content">
                         <div class="project-tags">Brand Website • Micro-interactions • B2B (Live)</div>
-                        <h3>ODYSS.LIFE Website</h3>
+                        <h3>ODYSS.LIFE</h3>
                         <p style="font-size: 0.9rem; color: #666; margin: -0.75rem 0 1rem 0; font-style: italic;">WAhA Design Lab</p>
                         <p>A storytelling-first product launch site with a polished early-access registration flow.</p>
                         <span class="project-read-more">odyss.life →</span>
