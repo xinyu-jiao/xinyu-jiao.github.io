@@ -4,7 +4,55 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tholos Partners</title>
+  <link rel="stylesheet" href="../static/css/project_style.css">
+  <style>
+    .top-navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      padding: 1rem 0;
+    }
+    .nav-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .back-link {
+      font-size: 1.2rem;
+      color: #111;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .back-link:hover {
+      opacity: 0.7;
+      transform: translateX(-3px);
+    }
+    body {
+      padding-top: 60px;
+    }
+  </style>
 </head>
 <body>
+  <!-- Navigation Bar -->
+  <nav class="top-navbar">
+    <div class="nav-container">
+      <a href="../index.html#projects" class="back-link" aria-label="Back to projects">
+        <span>←</span>
+        <span>Back</span>
+      </a>
+    </div>
+  </nav>
 </body>
 </html>

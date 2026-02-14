@@ -4,7 +4,39 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>New Project</title>
+  <link rel="stylesheet" href="../static/css/project_style.css">
+  <style>
+    .back-link {
+      position: fixed;
+      top: 24px;
+      left: 24px;
+      width: 48px;
+      height: 48px;
+      background: rgba(255, 255, 255, 0.9);
+      color: #111;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 50%;
+      font-size: 24px;
+      cursor: pointer;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    .back-link:hover {
+      background: rgba(255, 255, 255, 1);
+      transform: scale(1.15);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+  </style>
 </head>
 <body>
+  <!-- Back Button -->
+  <a href="../index.html#projects" class="back-link" aria-label="Back to projects">←</a>
 </body>
 </html>

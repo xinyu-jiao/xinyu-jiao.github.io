@@ -33,6 +33,10 @@ class PageController {
   applyInitialState() {
     if (window.location.hash === '#projects') {
       this.showProjects({ skipUrlUpdate: true });
+    } else {
+      // Remove active state from all nav links on landing page
+      const navLinks = document.querySelectorAll('.nav-link');
+      navLinks.forEach(link => link.classList.remove('active'));
     }
   }
 
@@ -80,6 +84,12 @@ class PageController {
   showProjects(options = {}) {
     const { skipUrlUpdate = false } = options;
     document.body.classList.add('landing-dismissed');
+    
+    // Update active state for navigation links
+    const projectsLink = document.querySelector('.nav-link[href="#projects"]');
+    const aboutLink = document.querySelector('.nav-link[href*="about"]');
+    if (projectsLink) projectsLink.classList.add('active');
+    if (aboutLink) aboutLink.classList.remove('active');
 
     if (!skipUrlUpdate && window.history?.replaceState) {
       const { pathname, search } = window.location;
@@ -93,6 +103,12 @@ class PageController {
   showLanding(options = {}) {
     const { skipUrlUpdate = false } = options;
     document.body.classList.remove('landing-dismissed');
+    
+    // Update active state for navigation links
+    const projectsLink = document.querySelector('.nav-link[href="#projects"]');
+    const aboutLink = document.querySelector('.nav-link[href*="about"]');
+    if (projectsLink) projectsLink.classList.remove('active');
+    if (aboutLink) aboutLink.classList.remove('active');
 
     if (!skipUrlUpdate && window.history?.replaceState) {
       const { pathname, search } = window.location;

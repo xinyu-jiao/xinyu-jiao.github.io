@@ -136,7 +136,8 @@ body.landing-dismissed .top-navbar.navbar-scrolled {
     font-size: 1rem;
     font-weight: 400;
     color: #ffffff;
-    text-decoration: none;
+    text-decoration: none !important;
+    border-bottom: none !important;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
     transition: opacity 0.3s ease;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
@@ -144,6 +145,14 @@ body.landing-dismissed .top-navbar.navbar-scrolled {
 
 .nav-link:hover {
     opacity: 0.7;
+    text-decoration: none !important;
+    border-bottom: none !important;
+}
+
+.nav-link.active {
+    font-weight: 600;
+    text-decoration: none !important;
+    border-bottom: none !important;
 }
 
 @media (max-width: 768px) {
@@ -839,8 +848,8 @@ column-unit[slot="0"] .cover small {
 
 .icon-link {
     display: inline-block;
-    width: 42px;
-    height: 42px;
+    width: 32px;
+    height: 32px;
     border-bottom: none;
     opacity: 0.9;
     transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -1083,8 +1092,9 @@ a:active {
     
     .page {
         min-height: calc(100vh + 200px);
-        align-items: flex-start;
-        padding-top: 80px;
+        align-items: center;
+        justify-content: center;
+        padding-top: 0;
         padding-bottom: 3rem;
         height: auto;
     }
@@ -1140,6 +1150,11 @@ a:active {
         word-wrap: break-word;
         overflow-wrap: break-word;
         width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
     
     .intro-main {
@@ -1148,7 +1163,8 @@ a:active {
         display: block;
         word-wrap: break-word;
         margin-bottom: 0.5rem;
-        margin-top: 1.5rem;
+        margin-top: 0;
+        text-align: center;
     }
     
     .intro-subtitle {
@@ -1157,6 +1173,7 @@ a:active {
         display: block;
         word-wrap: break-word;
         margin-bottom: 1rem;
+        text-align: center;
     }
     
     .intro-body {
@@ -1188,7 +1205,9 @@ a:active {
 @media (max-width: 480px) {
     .page {
         min-height: calc(100vh + 200px);
-        padding-top: 70px;
+        align-items: center;
+        justify-content: center;
+        padding-top: 0;
         padding-bottom: 2.5rem;
         height: auto;
     }
@@ -1220,6 +1239,11 @@ a:active {
         word-wrap: break-word;
         overflow-wrap: break-word;
         width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
     
     .intro-main {
@@ -1228,7 +1252,8 @@ a:active {
         display: block;
         word-wrap: break-word;
         margin-bottom: 0.5rem;
-        margin-top: 1rem;
+        margin-top: 0;
+        text-align: center;
     }
     
     .intro-subtitle {
@@ -1237,6 +1262,7 @@ a:active {
         display: block;
         word-wrap: break-word;
         margin-bottom: 1rem;
+        text-align: center;
     }
     
     .intro-body {
@@ -1250,13 +1276,16 @@ a:active {
     
     #more-btn {
         font-size: 0.85rem;
-        margin-top: -0.5rem;
+        margin-top: 0.5rem;
+        text-align: center;
+        display: block;
     }
     
     .social-icons {
         gap: 0.5rem;
-        margin-top: -0.5rem;
+        margin-top: 0.5rem;
         flex-wrap: wrap;
+        justify-content: center;
     }
     
     .icon-link {
@@ -1380,6 +1409,10 @@ body.landing-dismissed .nav-logo::after {
 body.landing-dismissed .nav-link {
   color: #333;
   text-shadow: none;
+}
+
+body.landing-dismissed .nav-link.active {
+  font-weight: 600;
 }
 
 .main-content {
