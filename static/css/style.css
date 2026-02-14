@@ -231,6 +231,7 @@ body.landing-dismissed .top-navbar.navbar-scrolled {
     background-repeat: no-repeat;
     z-index: 0;
     overflow: hidden;
+    filter: brightness(0.7) contrast(1.1);
 }
 
 @keyframes horizontalFlow {
@@ -369,6 +370,38 @@ body.landing-dismissed .top-navbar.navbar-scrolled {
     75% {
         transform: translate(20px, 30px) scale(1.05);
         opacity: 0.75;
+    }
+}
+
+/* 图标浮动动画 */
+@keyframes iconFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+/* 淡入上移动画 */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* More按钮脉冲动画 */
+@keyframes morePulse {
+    0%, 100% {
+        opacity: 0.85;
+    }
+    50% {
+        opacity: 1;
     }
 }
 
@@ -801,6 +834,7 @@ column-unit[slot="0"] .cover small {
     margin-top: -1rem;
     margin-bottom: 0;
     flex-wrap: wrap;
+    animation: fadeInUp 0.8s ease-out 0.3s both;
 }
 
 .icon-link {
@@ -809,17 +843,25 @@ column-unit[slot="0"] .cover small {
     height: 42px;
     border-bottom: none;
     opacity: 0.9;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    animation: iconFloat 3s ease-in-out infinite;
+    animation-delay: calc(var(--icon-index, 0) * 0.1s);
 }
+
+.icon-link:nth-child(1) { --icon-index: 0; }
+.icon-link:nth-child(2) { --icon-index: 1; }
+.icon-link:nth-child(3) { --icon-index: 2; }
+.icon-link:nth-child(4) { --icon-index: 3; }
 
 .icon-link:hover {
     opacity: 1;
-    transform: translateY(-2px) scale(1.1);
+    transform: translateY(-8px) scale(1.15) rotate(5deg);
+    filter: drop-shadow(0 4px 8px rgba(255, 255, 255, 0.3));
 }
 
 .icon-link:active {
     opacity: 0.8;
-    transform: translateY(0) scale(1.05);
+    transform: translateY(-4px) scale(1.1) rotate(-5deg);
 }
 
 .icon-link img {
@@ -858,14 +900,16 @@ column-unit[slot="1"] .cover {
     text-shadow: 
         0 1px 3px rgba(0, 0, 0, 0.4),
         0 1px 1px rgba(0, 0, 0, 0.3);
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
     text-align: center;
+    animation: fadeInUp 0.8s ease-out 0.5s both, morePulse 2s ease-in-out infinite 1.5s;
+    position: relative;
 }
 
 #more-btn:hover {
     opacity: 1;
-    transform: translateX(4px);
+    transform: translateX(8px) scale(1.05);
 }
 
 .intro-main {
