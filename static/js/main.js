@@ -23,6 +23,7 @@ class PageController {
     this.setupNavigation();
     this.applyInitialState();
     this.setupScrollHide();
+    this.triggerJumpInOnLoad();
     console.log('Page controller initialized');
   }
 
@@ -96,6 +97,27 @@ class PageController {
     if (!skipUrlUpdate && window.history?.replaceState) {
       const { pathname, search } = window.location;
       window.history.replaceState(null, '', `${pathname}${search}`);
+    }
+  }
+
+  /**
+   * Trigger fade-in-up effect when page loads (inspired by ODA Architecture)
+   */
+  triggerJumpInOnLoad() {
+    const introMain = document.querySelector('.intro-main');
+    const introSubtitle = document.querySelector('.intro-subtitle');
+    
+    if (introMain) {
+      // Add animation class after a small delay to ensure it triggers
+      setTimeout(() => {
+        introMain.classList.add('fade-in-up');
+      }, 300);
+    }
+    
+    if (introSubtitle) {
+      setTimeout(() => {
+        introSubtitle.classList.add('fade-in-up');
+      }, 300);
     }
   }
 
